@@ -1,29 +1,29 @@
 from django.db import models
-from django.db.models.deletion import CASCADE
 
 
 # Create your models here.
-class CarType(models.Model):
-    # image =
-    name = models.CharField(max_length=150)
+class CarBrand(models.Model):
+    brand_image = models.ImageField(upload_to='brand/%Y/%m/%d', blank=True)
+    brand_name = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        # return name
-        pass
+        return self.brand_name
 
 
-class Car(models.Model):
-    # image =
-    type = models.ForeignKey(CarType, on_delete=models.CASCADE)
+class BrandModel(models.Model):
+    car_image = models.ImageField(upload_to='car/%Y/%m/%d', blank=True)
     model_name = models.CharField(max_length=200)
+    brand = models.ForeignKey(CarBrand, on_delete=models.CASCADE)
     number_of_doors = models.PositiveIntegerField()
     number_of_passengers = models.PositiveIntegerField()
     fuel = models.CharField(max_length=50)
     transmission = models.CharField(max_length=50)
     drive_type = models.CharField(max_length=50)
+    description = models.TextField(max_length=250, null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    is_available = models.BooleanField(default=False)
 
     def __str__(self):
-        # return model_name
-        pass
-    # 1:28 on tutorial
+        return self.model_name
