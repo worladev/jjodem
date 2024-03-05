@@ -1,9 +1,18 @@
-nav a{
-    color: #ffffff;
-}
-div ul li a{
-    color: #ffffff
-}
 h3{
     color: green;
+}
+.nav-link a{
+    color: #ffffff;
+    font-size: 1.2em;
+}
+.nav-link a:hover{
+    background-color: #FFE6E8;
+    border-radius: 6px;
+    color: #026C3D;
+}
+.nav-link li{
+     margin-left: 12px;
+}
+.nav-items{
+    background-color: #F70D1A;
 }
