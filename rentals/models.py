@@ -27,3 +27,20 @@ class BrandModel(models.Model):
 
     def __str__(self):
         return self.model_name
+
+
+class RentalDetails(models.Model):
+    name = models.CharField(max_length=50)
+    logo = models.ImageField(upload_to='car/%Y/%m/%d', blank=True)
+    slogan = models.CharField(max_length=150)
+    address = models.CharField(max_length=150)
+    mobile = models.CharField(max_length=100)
+    email = models.EmailField(max_length=254)
+    fb = models.URLField(max_length=200)
+    lkdIn = models.URLField(max_length=200)
+    ig = models.URLField(max_length=200)
+    x = models.URLField(max_length=200)
+    ytube = models.URLField(max_length=200)
+
+    def __str__(self):
+        return self.name
