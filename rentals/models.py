@@ -36,11 +36,12 @@ class RentalDetails(models.Model):
     address = models.CharField(max_length=150)
     mobile = models.CharField(max_length=100)
     email = models.EmailField(max_length=254)
-    fb = models.URLField(max_length=200)
-    lkdIn = models.URLField(max_length=200)
-    ig = models.URLField(max_length=200)
-    x = models.URLField(max_length=200)
-    ytube = models.URLField(max_length=200)
+    fb = models.URLField(max_length=200, blank=True)
+    lkdIn = models.URLField(max_length=200, blank=True)
+    ig = models.URLField(max_length=200, blank=True)
+    x = models.URLField(max_length=200, blank=True)
+    ytube = models.URLField(max_length=200, blank=True)
+    whatsapp = models.URLField(max_length=200, blank=True)
 
     def __str__(self):
         return self.name
