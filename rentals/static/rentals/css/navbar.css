@@ -11,8 +11,34 @@
      margin-left: 12px;
 }
 .nav-items{
-    background-color: #F70D1A;
+    background-color: #008B8B;
 }
+
+/*SOCIALS*/
+.social{
+    margin-right: 10px;
+    list-style-type: none;
+}
+.social li{
+    display: inline;
+    margin-right: 10px;
+}
+.social li a{
+    font-size: 1.3em;
+}
+.blue{
+    color: white;
+}
+.green{
+    color: green;
+}
+.black{
+    color: black;
+}
+.red{
+    color: red;
+}
+
 
 /* MOBILE DISPLAY FOR TO NAV*/
 @media only screen and (max-width: 768px) {

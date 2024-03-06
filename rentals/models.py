@@ -45,3 +45,6 @@ class RentalDetails(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# watch review with stars video
