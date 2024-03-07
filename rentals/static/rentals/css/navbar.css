@@ -1,5 +1,19 @@
+/*TOP NAV*/
+.top-nav{
+  background-color: #EAEEE9;
+}
+.top-nav div{
+    text-align: center;
+    margin-top:0.5em;
+    color: #000000;
+}
+
+/*MAIN NAV*/
+.nav-item{
+    background-color: #3B9C9C;
+}
 .nav-link a{
-    color: #ffffff;
+    color: #EAEEE9;
     font-size: 1.2em;
 }
 .nav-link a:hover{
@@ -10,39 +24,65 @@
 .nav-link li{
      margin-left: 12px;
 }
-.nav-items{
-    background-color: #008B8B;
+.dropdown-item{
+    color: #3B9C9C !important;
+    font-weight: medium !important;
 }
 
 /*SOCIALS*/
-.social{
+.social ul{
     margin-right: 10px;
     list-style-type: none;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 0px;
 }
-.social li{
-    display: inline;
+.social ul li{
+    display: inline-block;
+    float: left;
     margin-right: 10px;
+    padding: 0px;
 }
 .social li a{
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 .blue{
-    color: white;
+    color: #3B5998;
 }
 .green{
-    color: green;
+    color: #4FCE5D;
 }
 .black{
-    color: black;
+    color: #000000;
 }
 .red{
-    color: red;
+    color: #CD486B;
+}
+
+/*SEARCH BAR*/
+.form-style{
+    border-radius: 12px 0px 0px 12px !important;
+    background: transparent !important;
+    outline: none !important;
+    color: #000000 !important;
+}
+input::placeholder {
+    color: #EAEEE9 !important;
+}
+input:focus{
+    border: transparent !important;
 }
 
 
 /* MOBILE DISPLAY FOR TO NAV*/
 @media only screen and (max-width: 768px) {
-  .mobile-display {
-    display: none;
-  }
+    .mobile-display {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .desktop-display {
+        display: none;
+    }
 }
