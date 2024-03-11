@@ -46,19 +46,13 @@ class BrandModel(models.Model):
         return self.model_name
 
 
-class RentalDetails(models.Model):
+class ShopInfo(models.Model):
     name = models.CharField(max_length=50)
     logo = models.ImageField(upload_to='car/%Y/%m/%d', blank=True)
     slogan = models.CharField(max_length=150)
     address = models.CharField(max_length=150)
     mobile = models.CharField(max_length=100)
     email = models.EmailField(max_length=254)
-    fb = models.URLField(max_length=200, blank=True)
-    lkdIn = models.URLField(max_length=200, blank=True)
-    ig = models.URLField(max_length=200, blank=True)
-    x = models.URLField(max_length=200, blank=True)
-    ytube = models.URLField(max_length=200, blank=True)
-    whatsapp = models.URLField(max_length=200, blank=True)
 
     def __str__(self):
         return self.name
@@ -77,5 +71,16 @@ class ServiceReview(models.Model):
         verbose_name_plural = 'reviews'
 
     def __str__(self):
-        return self.review_date
+        return self.name
 
+
+class SocialHandle(models.Model):
+    handle_name = models.CharField(max_length=50)
+    handle_url = models.URLField(max_length=200, blank=True)
+
+    class Meta:
+        verbose_name = 'handle'
+        verbose_name_plural = 'handles'
+
+    def __str__(self):
+        return self.handle_name
