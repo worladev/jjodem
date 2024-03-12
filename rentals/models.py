@@ -12,7 +12,7 @@ RATING = (
 
 # Create your models here.
 class CarType(models.Model):
-    type_image = models.ImageField(upload_to='brand/%Y/%m/%d', blank=True)
+    type_image = models.ImageField(upload_to='type/%Y/%m/%d', blank=True)
     type_name = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
 
@@ -24,10 +24,11 @@ class CarType(models.Model):
         return self.type_name
 
 
-class BrandModel(models.Model):
-    car_image = models.ImageField(upload_to='car/%Y/%m/%d', blank=True)
-    model_name = models.CharField(max_length=200)
+class CarModel(models.Model):
     type = models.ForeignKey(CarType, on_delete=models.CASCADE)
+    brand_name = models.CharField(max_length=50)
+    model_name = models.CharField(max_length=200)
+    model_image = models.ImageField(upload_to='car/%Y/%m/%d', blank=True)
     number_of_doors = models.PositiveIntegerField()
     number_of_passengers = models.PositiveIntegerField()
     fuel = models.CharField(max_length=50)
