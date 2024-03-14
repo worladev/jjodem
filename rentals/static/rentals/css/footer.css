@@ -6,7 +6,7 @@
     background-size: cover;
 }
 
-.footer-h6{
+.footer-section-h6{
     color: #3B9C9C;
     text-align: left;
     margin-left: 22%;
@@ -57,4 +57,8 @@
 }
 .red{
     color: #CD486B;
+}
+.footer-section-h4{
+    color: #3B9C9C;
+    text-align: left;
 }
