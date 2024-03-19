@@ -31,12 +31,10 @@
 
 /*SOCIALS*/
 .footer-social ul{
-    margin: 10px;
+    margin-left: 15px;
     list-style-type: none;
-    background-color: #FFFFFF;
-    border-radius: 8px;
     padding: 0px;
-    text-align: center;
+    text-align: left;
 }
 .footer-social ul li{
     display: inline-block;
@@ -46,19 +44,10 @@
 .footer-social li a{
     font-size: 1.3em;
 }
-.blue{
-    color: #3B5998;
+.footer-social-color{
+    color: #FFFFFF;
 }
-.green{
-    color: #4FCE5D;
-}
-.black{
-    color: #000000;
-}
-.red{
-    color: #CD486B;
-}
-.footer-section-h4{
+.footer-section-h5{
     color: #3B9C9C;
     text-align: left;
 }
