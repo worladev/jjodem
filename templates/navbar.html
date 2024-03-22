@@ -46,7 +46,9 @@
     <div class="row">
         <nav class="navbar navbar-expand-lg nav-item">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">JJODEM</a>
+                {% for info in shop_info %}
+                <a class="navbar-brand" href="#"><img src="{{info.logo.url}}" alt="JJODEM"></a>
+                {% endfor %}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -77,16 +79,16 @@
                         <!--Social Handles 1 -Display on Desktop-->
                         <ul>
                             <li>
-                                <a href=""><i class="bi bi-facebook blue"></i></a>
+                                <a href=""><i class="bi bi-facebook social-color"></i></a>
                             </li>
                             <li>
-                                <a href=""><i class="bi bi-whatsapp green"></i></a>
+                                <a href=""><i class="bi bi-whatsapp social-color"></i></a>
                             </li>
                             <li>
-                                <a href=""><i class="bi bi-twitter-x black"></i></a>
+                                <a href=""><i class="bi bi-twitter-x social-color"></i></a>
                             </li>
                             <li>
-                                <a href=""><i class="bi bi-instagram red"></i></a>
+                                <a href=""><i class="bi bi-instagram social-color"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -94,7 +96,7 @@
                     <form action="" class="">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control form-control-sm form-style" placeholder="Search Here">
-                            <button type="submit" class="input-group-text btn-light">
+                            <button type="submit" class="input-group-text">
                                 <i class="bi bi-search"></i>
                             </button>
                         </div>
@@ -105,16 +107,16 @@
                         <!--Social Handles-->
                         <ul>
                             <li>
-                                <a href=""><i class="bi bi-facebook blue"></i></a>
+                                <a href=""><i class="bi bi-facebook social-color"></i></a>
                             </li>
                             <li>
-                                <a href=""><i class="bi bi-whatsapp green"></i></a>
+                                <a href=""><i class="bi bi-whatsapp social-color"></i></a>
                             </li>
                             <li>
-                                <a href=""><i class="bi bi-twitter-x black"></i></a>
+                                <a href=""><i class="bi bi-twitter-x social-color"></i></a>
                             </li>
                             <li>
-                                <a href=""><i class="bi bi-instagram red"></i></a>
+                                <a href=""><i class="bi bi-instagram social-color"></i></a>
                             </li>
                         </ul>
                     </div>
