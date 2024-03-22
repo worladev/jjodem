@@ -20,28 +20,6 @@
 
 </head>
 <body>
-    <!--TOP NAV BAR-->
-    <div class="row top-nav">
-        {% for info in shop_info %}
-            <div class="col-3 mobile-display">
-                {{info.slogan}}
-            </div>
-            <div class="col-3 mobile-display">
-                <i class="bi bi-pin-map-fill"></i>
-                {{info.address}}
-            </div>
-            <div class="col-3 mobile-display">
-                <i class="bi bi-telephone-fill"></i>
-                {{info.mobile}}
-            </div>
-            <div class="col-3 mobile-display">
-                <i class="bi bi-envelope-at-fill"></i>
-                {{info.email}}
-            </div>
-        {% endfor %}
-    </div><!--END OF TOP NAV BAR-->
-    
-
     <!--MAIN NAVBAR-->
     <div class="row">
         <nav class="navbar navbar-expand-lg nav-item">
@@ -125,5 +103,26 @@
             </div>
         </nav>
     </div><!--END OF MAIN NAVBAR-->
+
+    <!--CONTACT INFO NAVBAR-->
+    <div class="row shop-info mobile-display">
+        {% for info in shop_info %}
+        <ul>
+            <li>{{info.slogan}}</li>
+            <li>
+                <i class="bi bi-pin-map-fill"></i>
+                {{info.address}}
+            </li>
+            <li>
+                <i class="bi bi-telephone-fill"></i>
+                {{info.mobile}}
+            </li=>
+            <li>
+                <i class="bi bi-envelope-at-fill"></i>
+                {{info.email}}
+            </li=>
+        </ul>
+        {% endfor %}
+    </div><!--END OF CONTACT INFO NAVBAR-->
 </body>
 </html>

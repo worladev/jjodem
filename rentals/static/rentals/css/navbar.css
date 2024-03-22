@@ -1,15 +1,6 @@
-/*TOP NAV*/
-.top-nav{
-    background-color: transparent;
-    padding: 0% !important;
+.row{
     margin: 0% !important;
 }
-.top-nav div{
-    text-align: center;
-    color: #000000;
-    font-weight: 400;
-}
-
 /*MAIN NAV*/
 .nav-item{
     background-color: #008080;
@@ -66,11 +57,29 @@ input::placeholder {
     color: #FFFFFF !important;
     font-style: italic;
 }
-/**
-input:focus{
-    border: transparent !important;
-}**/
 
+input:focus{
+    background-color: #FFFFFF !important;
+}
+
+/*CONTACT INFO NAVBAR*/
+.shop-info{
+    /**background-color: #0C090A;**/
+    background-color: #2C3539;
+    text-align: center;
+    padding: 0% !important;
+    margin: 0% !important;
+}
+.shop-info ul{
+    list-style-type: none;
+    padding: 0px;
+}
+.shop-info ul li{
+    display: inline-block;
+    color: #FFE6E8;
+    margin-right: 5%;
+    padding: 0px;
+}
 
 /* MOBILE DISPLAY FOR TO NAV*/
 @media only screen and (max-width: 768px) {
