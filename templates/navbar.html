@@ -22,28 +22,25 @@
 <body>
     <!--TOP NAV BAR-->
     <div class="row top-nav">
-        <div class="col-4 mobile-display">slogan</div>
-        <div class="col-2 mobile-display">address</div>
-        <div class="col-2 mobile-display">mobile</div>
-        <div class="col-2 mobile-display">email</div>
-        <div class="col-2 mobile-display social">
-            <!--Social Handles 1-->
-            <ul>
-                <li>
-                    <a href=""><i class="bi bi-facebook blue"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="bi bi-whatsapp green"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="bi bi-twitter-x black"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="bi bi-instagram red"></i></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+        {% for info in shop_info %}
+            <div class="col-3 mobile-display">
+                {{info.slogan}}
+            </div>
+            <div class="col-3 mobile-display">
+                <i class="bi bi-pin-map-fill"></i>
+                {{info.address}}
+            </div>
+            <div class="col-3 mobile-display">
+                <i class="bi bi-telephone-fill"></i>
+                {{info.mobile}}
+            </div>
+            <div class="col-3 mobile-display">
+                <i class="bi bi-envelope-at-fill"></i>
+                {{info.email}}
+            </div>
+        {% endfor %}
+    </div><!--END OF TOP NAV BAR-->
+    
 
     <!--MAIN NAVBAR-->
     <div class="row">
@@ -76,6 +73,24 @@
                         </li>
                     </ul>
 
+                    <div class="mobile-display social">
+                        <!--Social Handles 1 -Display on Desktop-->
+                        <ul>
+                            <li>
+                                <a href=""><i class="bi bi-facebook blue"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><i class="bi bi-whatsapp green"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><i class="bi bi-twitter-x black"></i></a>
+                            </li>
+                            <li>
+                                <a href=""><i class="bi bi-instagram red"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
                     <form action="" class="">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control form-control-sm form-style" placeholder="Search Here">
@@ -85,7 +100,7 @@
                         </div>
                     </form>
 
-                    <!--Social Handles 2-->
+                    <!--Social Handles 2 -Display on Mobile-->
                     <div class="col-2 desktop-display social">
                         <!--Social Handles-->
                         <ul>
@@ -107,6 +122,6 @@
                 </div>
             </div>
         </nav>
-    </div>
+    </div><!--END OF MAIN NAVBAR-->
 </body>
 </html>

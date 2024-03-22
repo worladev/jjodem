@@ -1,10 +1,11 @@
 /*TOP NAV*/
 .top-nav{
-  background-color: #EAEEE9;
+    background-color: #EAEEE9;
+    padding: 0% !important;
+    margin: 0% !important;
 }
 .top-nav div{
     text-align: center;
-    margin-top:0.5em;
     color: #000000;
 }
 
@@ -33,13 +34,11 @@
 .social ul{
     margin-right: 10px;
     list-style-type: none;
-    background-color: #FFFFFF;
     border-radius: 8px;
     padding: 0px;
 }
 .social ul li{
     display: inline-block;
-    float: left;
     margin-right: 10px;
     padding: 0px;
 }
