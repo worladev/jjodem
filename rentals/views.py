@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import CarType, ShopInfo
+from .models import CarType, ShopInfo, CarModel
 
 
 # Create your views here.
@@ -12,3 +12,10 @@ def home(request):
         }
     return render(request, 'rentals/home.html', context)
 # checkout django template inheritance
+
+
+def filter(request, type_name):
+    filter_car = CarModel.objects.filter(type="")
+    context = {'car': filter_car}
+    return render(request, 'rentals/filter.html', context)
+    
