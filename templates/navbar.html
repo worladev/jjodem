@@ -36,20 +36,17 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Rentals</a></li>
-                                <li><a class="dropdown-item" href="#">Tour Guide</a></li>
-                            </ul>
-                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="#">Inventory</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
                         </li>
                     </ul>
 
@@ -105,7 +102,7 @@
     </div><!--END OF MAIN NAVBAR-->
 
     <!--CONTACT INFO NAVBAR-->
-    <div class="row shop-info mobile-display">
+    <div class="row shop-info mobile-display sticky-top">
         {% for info in shop_info %}
         <ul>
             <li>{{info.slogan}}</li>
