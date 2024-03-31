@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+
+    <p>This is the filter_cars page</p>
+    {% for type in filter_car %}
+        {% if type.is_available %}
+            <h4>Car Type is available</h4>
+        {% else %}
+            <h4>Car type is not available</h4>
+        {% endif %}
+    {% endfor %}
+
+    {% include 'footer.html' %}
+{% endblock content %}

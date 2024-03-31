@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{car.type_name}}</h5>
                         <p class="card-text">{{car.description}}</p>
-                        <a href="{% url 'filter' car.type_name %}" class="btn btn-primary">Explore {{car.type_name}}s</a>
+                        <a href="{% url 'filter_cars' car.id %}" class="btn btn-primary">Explore {{car.type_name}}s</a>
                     </div>
                 </div>
             </div>
