@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="row" style="background-color: #F7F7F7;">
+        <div class="col detail-card">
+            <img src="{{car.model_image.url}}" alt="...">
+            <div class="">
+                <h6 class="">{{car.brand_name}} | {{car.model_name}}</h6>
+                <P class="">Doors: {{car.number_of_doors}}</P>
+                <P class="">Passengers: {{car.number_of_passengers}}</P>
+                <P class="">Fuel: {{car.fuel}}</P>
+                <a href="#" class="btn btn-primary">Place Order</a>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+{% endblock content %}

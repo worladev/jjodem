@@ -3,14 +3,23 @@
 {% block content %}
     {% include 'navbar.html' %}
 
-    <p>This is the filter_cars page</p>
-    {% for type in filter_car %}
-        {% if type.is_available %}
-            <h4>Car Type is available</h4>
+    <div class="row" style="background-color: #F7F7F7;">
+        {% if filter_car %}
+            {% for car in filter_car %}
+                <div class="col-4">
+                    <div class="card home-card" style="width: 18rem;">
+                        <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">{{car.brand_name}} | {{car.model_name}}</h6>
+                            <a href="{% url 'car-detail' car.id %}" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         {% else %}
-            <h4>Car type is not available</h4>
+            <h3>Sorry! We do not have this type of cars in our warehouse.</h3>
         {% endif %}
-    {% endfor %}
+    </div>
 
     {% include 'footer.html' %}
 {% endblock content %}
