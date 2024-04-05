@@ -6,6 +6,7 @@ class CarType(models.Model):
     type_image = models.ImageField(upload_to='type/%Y/%m/%d', blank=True)
     type_name = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
+    is_available = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'car type'
