@@ -2,16 +2,37 @@
 
 {% block content %}
     {% include 'navbar.html' %}
-    <div class="row" style="background-color: #F7F7F7;">
-        <div class="col detail-card">
-            <img src="{{car.model_image.url}}" alt="...">
-            <div class="">
-                <h6 class="">{{car.brand_name}} | {{car.model_name}}</h6>
-                <P class="">Doors: {{car.number_of_doors}}</P>
-                <P class="">Passengers: {{car.number_of_passengers}}</P>
-                <P class="">Fuel: {{car.fuel}}</P>
-                <a href="#" class="btn btn-primary">Place Order</a>
+    <div class="row" style="background-color: #FFF0F5;">
+        <div class="col">
+            <div class="detail-card">
+                <img src="{{car.model_image.url}}" style="width: 50%; height: 65%;" alt="...">
+                <h5 class="">{{car.brand_name}} | {{car.model_name}}</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Doors: <b>{{car.number_of_doors}}</b></p>
+                        <p>Passengers: <b>{{car.number_of_passengers}}</b></p>
+                        <p>Fuel: <b>{{car.fuel}}</b></p>      
+                    </div>
+                    <div class="col-6">
+                        <p>Fuel: <b>{{car.fuel}}</b></p>
+                        <p>Transmission: <b>{{car.transmission}}</b></p>
+                        <p>Drive Type: <b>{{car.drive_type}}</b></p>
+                        <a href="#" class="btn btn-primary">Place Order</a>
+                    </div> 
+                </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row"><!--REVIEW SPOT-->
+        <div class="col">
+            REVIEW SPOT
+        </div>
+    </div>
+
+    <div class="row"><!--RECOMMENDATION SPOT-->
+        <div class="col">
+            RECOMMENDATION SPOT
         </div>
     </div>
     {% include 'footer.html' %}

@@ -2,9 +2,13 @@
 
 {% block content %}
     {% include 'navbar.html' %}
-
+    <div class="row home-div">
+        <div class="col"><!--BLOG HEADLINES SPOT-->
+            BLOG HEADLINES SPOT
+        </div>
+    </div>
     <div class="row home-div" style="background-color: #F7F7F7;">
-        <h5>What Type of Car Are You Looking For?</h5>
+        <h5>CATEGORIES</h5>
         {% for car in car_type %}
             <div class="col-4">
                 <div class="card home-card" style="width: 18rem;">
@@ -17,6 +21,11 @@
                 </div>
             </div>
         {% endfor %}
+    </div>
+    <div class="row home-div"><!--REVIEW SPOT-->
+        <div class="col">
+            REVIEW SPOT
+        </div>
     </div>
     
     {% include 'footer.html' %}
