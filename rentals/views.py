@@ -18,7 +18,7 @@ def add_shop_info(view_info_func):
 
 @add_shop_info
 def home(request, shop_info):
-    car_type = CarType.objects.all()
+    car_type = CarType.objects.filter(is_available=True)
     context = {
         'car_type': car_type,
         'shop_info': shop_info,
