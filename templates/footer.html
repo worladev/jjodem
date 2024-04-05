@@ -12,34 +12,22 @@
 
 </head>
 <body>
+    
     <div class="row footer">
         <div class="col-4">
             <div class="footer-links">
                 <h6 class="footer-section-h6">Quick Links</h6>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Rentals</a></li>
-                    <li><a href="">Tour Guide</a></li>
-                    <li><a href="">Blog</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'inventory-list' %}">Inventory</a></li>
                     <li><a href="">About</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-4">
-            <div class="footer-links">
-                <h6 class="footer-section-h6">Contact</h6>
-                <ul>
-                    <li><a href="">slogan</a></li>
-                    <li><a href="">Address</a></li>
-                    <li><a href="">email</a></li>
-                    <li><a href="">mobile</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Blog</a></li>
                 </ul>
             </div>
 
-            <!--Social Handles-->
-            <div class="footer-social">
+             <!--Social Handles-->
+             <div class="footer-social">
                 <ul>
                     <li>
                         <a href=""><i class="bi bi-facebook footer-social-color"></i></a>
@@ -57,10 +45,21 @@
             </div>
         </div>
 
+        {% for info in shop_info %}
         <div class="col-4">
             <div class="footer-links">
-                <h5 class="footer-section-h5">JJODEM RENTALS</h5>
-                <img src="" alt="jjodem logo">
+                <h6 class="footer-section-h6">Contact</h6>
+                <ul>
+                    <li><a href="">{{info.address}}</a></li>
+                    <li><a href="">{{info.email}}</a></li>
+                    <li><a href="">{{info.mobile}}</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="footer-links">
+                <img src="{{info.logo.url}}" alt="jjodem-logo">
                 <ul>
                     <li><a href="">Terms and Conditions</a></li>
                     <li><a href="">Privacy Policy</a></li>
@@ -68,7 +67,8 @@
                 </ul>
             </div>
         </div>
-
+        {% endfor %}
     </div>
+    
 </body>
 </html>
