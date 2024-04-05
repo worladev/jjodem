@@ -1,6 +1,7 @@
 .footer{
     background-image: url('/static/rentals/images/dark-footer2.jpg');
     padding-top: 5%;
+    margin: 5%;
     padding-bottom: 3%;
     background-repeat: no-repeat;
     background-size: cover;

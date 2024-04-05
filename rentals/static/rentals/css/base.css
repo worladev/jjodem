@@ -8,11 +8,8 @@
 
 /*DETAIL*/
 .detail-card{
-    margin: 5% auto 5% auto;
+    margin: 2%;
+    padding: 2%;
+    background-color: #EAEEE9;
     text-align: center;
-}
-.detail-card img{
-    height: 200;
-    width: 250;
-    border-radius: 5%;
 }
