@@ -2,27 +2,32 @@
 
 {% block content %}
     {% include 'navbar.html' %}
-    <div class="row home-div">
-        <div class="col"><!--BLOG HEADLINES SPOT-->
-            BLOG HEADLINES SPOT
+    <div class="row home-intro">
+        <div class="col"><!--INTRO SPOT-->
+            {% for info in shop_info %}
+            <div class="home-intro-landing">
+                <a href=""><img src="{{info.logo.url}}" alt="JJODEM"></a>
+            </div>
+            {% endfor %}
         </div>
     </div>
-    <div class="row home-div" style="background-color: #F7F7F7;">
+
+    <div class="row" style="background-color: #F7F7F7;">
         <h5>CATEGORIES</h5>
         {% for car in car_type %}
-            <div class="col-4">
-                <div class="card home-card" style="width: 18rem;">
+            <div class="col-3 home-div">
+                <div class="card home-card">
                     <img src="{{car.type_image.url}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{car.type_name}}</h5>
-                        <p class="card-text">{{car.description}}</p>
                         <a href="{% url 'filter_cars' car.id %}" class="btn btn-primary">Explore {{car.type_name}}s</a>
                     </div>
                 </div>
             </div>
         {% endfor %}
     </div>
-    <div class="row home-div"><!--REVIEW SPOT-->
+
+    <div class="row"><!--REVIEW SPOT-->
         <div class="col">
             REVIEW SPOT
         </div>

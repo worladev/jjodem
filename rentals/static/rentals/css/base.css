@@ -1,6 +1,24 @@
-
+div .container-fluid{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.home-intro{
+    background-image: url('/static/rentals/images/road-bg.jpg');
+}
+.home-intro-landing{
+    background-color: #008080;
+    width: 45%;
+    height: auto;
+    border-radius: 18px;
+    margin: 3%;
+    padding: 1%;
+}
 .home-card{
     margin: 5% auto 5% auto;
+}
+.home-card:hover{
+    border: 1px solid #008080;
+    transform: scale(1.1);
 }
 .home-card img{
     height: 175px;
