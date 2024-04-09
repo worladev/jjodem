@@ -59,3 +59,11 @@ def car_detail(request, car_id, shop_info):
         'shop_info': shop_info,
     }
     return render(request, 'rentals/car-detail.html', context)
+
+
+@add_shop_info
+def about(request, shop_info):
+    context = {
+        'shop_info': shop_info
+    }
+    return render(request, 'rentals/about.html', context)
