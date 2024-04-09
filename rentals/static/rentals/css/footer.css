@@ -29,6 +29,11 @@
     text-decoration: underline;
     color: #3B9C9C;
 }
+.footer-links img{
+    width: 35%;
+    height: 40%;
+    margin-left: 15%;
+}
 
 /*SOCIALS*/
 .footer-social ul{
