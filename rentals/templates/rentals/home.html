@@ -2,27 +2,40 @@
 
 {% block content %}
     {% include 'navbar.html' %}
+    
     <div class="row home-intro">
-        <div class="col"><!--INTRO SPOT-->
-            {% for info in shop_info %}
-            <div class="home-intro-landing">
-                <a href=""><img src="{{info.logo.url}}" alt="JJODEM"></a>
+        <div class="col">
+            <div class="home-intro-truck">
+                <i class="bi bi-truck"></i>
+                <p class="animation-text">Car Rentals</p>
             </div>
+            <hr>
+            <h4>Explore Our Car Types...</h4>
+        </div>
+        <div class="col-5 home-intro-landing"><!--INTRO SPOT-->
+            {% for info in shop_info %}
+                <a href=""><img src="{{info.logo.url}}" alt="JJODEM"></a>
+                <P>{{info.slogan}}</P>
+                <a href="{% url 'inventory-list' %}">
+                    <p class="btn btn-primary"> Check Available Vehicles</p>
+                </a>
             {% endfor %}
         </div>
     </div>
 
-    <div class="row" style="background-color: #F7F7F7;">
-        <h5>CATEGORIES</h5>
+    <div class="row home-main-div" style="background-color: #F7F7F7;">
+        <hr>
         {% for car in car_type %}
-            <div class="col-3 home-div">
-                <div class="card home-card">
-                    <img src="{{car.type_image.url}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{car.type_name}}</h5>
-                        <a href="{% url 'filter_cars' car.id %}" class="btn btn-primary">Explore {{car.type_name}}s</a>
+            <div class="col-3">
+                <a href="{% url 'filter_cars' car.id %}">
+                    <div class="card home-card">
+                        <img src="{{car.type_image.url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{car.type_name}}</h5>
+                            <button class="btn btn-primary">Explore {{car.type_name}}s</button>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         {% endfor %}
     </div>

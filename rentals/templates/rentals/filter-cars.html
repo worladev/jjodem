@@ -3,16 +3,18 @@
 {% block content %}
     {% include 'navbar.html' %}
 
-    <div class="row" style="background-color: #F7F7F7;">
+    <div class="row home-main-div" style="background-color: #F7F7F7;">
         {% for car in filter_car %}
             <div class="col-4">
+                <a href="{% url 'car-detail' car.id %}">
                 <div class="card home-card" style="width: 18rem;">
                     <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">{{car.brand_name}} | {{car.model_name}}</h6>
-                        <a href="{% url 'car-detail' car.id %}" class="btn btn-primary">Details</a>
+                        <button class="btn btn-primary">Details</button>
                     </div>
                 </div>
+                </a>
             </div>
         {% endfor %}
     </div>
