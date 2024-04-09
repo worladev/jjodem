@@ -20,7 +20,7 @@
     text-decoration: underline;
     border-radius: 6px;
     color: #3B9C9C;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .nav-link li{
      margin-left: 12px;
@@ -67,12 +67,13 @@ input:focus{
 
 /*CONTACT INFO NAVBAR*/
 .shop-info{
-    text-align: center;
+    text-align: right;
     padding: 0% !important;
     margin: 0% !important;
     
 }
 .shop-info ul{
+    padding: 0 !important;
     background-color: #2C3539;
     text-align: center;
     list-style-type: none;
@@ -80,7 +81,7 @@ input:focus{
 .shop-info ul li{
     display: inline-block;
     color: #FFE6E8;
-    margin-right: 5%;
+    margin-right: 3%;
     padding: 0.3%;
 }
 
