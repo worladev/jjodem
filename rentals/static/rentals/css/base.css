@@ -2,16 +2,57 @@ div .container-fluid{
     margin: 0px !important;
     padding: 0px !important;
 }
+
+/*HOME PAGE TOP SECTION*/
 .home-intro{
     background-image: url('/static/rentals/images/road-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px 0 18px 0;
+    padding-bottom: 1%;
+}
+.home-intro p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .home-intro-landing{
     background-color: #008080;
-    width: 45%;
+    color: #F7F7F7;
+    text-align: center;  
+    border-radius: 18px 0 18px 0;
+    padding: 0.6%;
     height: auto;
-    border-radius: 18px;
-    margin: 3%;
-    padding: 1%;
+    margin: 1%;
+}
+.home-intro-landing img{
+    width: 35%;
+    height: 40%;
+}
+.home-intro-truck{
+    padding: 0%;
+    margin: 0%;
+    position: relative;
+    animation-name: intro-truck;
+    animation-duration: 8s;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+@keyframes intro-truck{
+    0% {font-size: 5em; color: #000000; left: 0px;}
+    50% {font-size: 5em; color: maroon; left: 200px;}
+    100% {font-size: 5em; color: #008080; left: 300px;}
+}
+.animation-text{
+    font-size: 0.4em;
+}
+
+/*HOME PAGE CAR TYPE SECTION*/
+.home-main-div{
+    padding-top: 2%;
+}
+.home-main-div a{
+    text-decoration: none;
 }
 .home-card{
     margin: 5% auto 5% auto;
@@ -24,7 +65,7 @@ div .container-fluid{
     height: 175px;
 }
 
-/*DETAIL*/
+/*DETAIL TEMPLATE*/
 .detail-card{
     margin: 2%;
     padding: 2%;
