@@ -75,7 +75,7 @@ input:focus{
 .shop-info ul{
     padding: 0 !important;
     background-color: #2C3539;
-    text-align: center;
+    text-align: right;
     list-style-type: none;
 }
 .shop-info ul li{
