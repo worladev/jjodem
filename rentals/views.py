@@ -1,7 +1,7 @@
 from functools import wraps
-from django.shortcuts import render
-from django.http import Http404
+from django.shortcuts import render, Http404, get_object_or_404
 from .models import CarType, ShopInfo, CarModel
+from .recommender import get_similar_cars
 
 
 # Create your views here.
@@ -51,12 +51,16 @@ def inventory_list(request, shop_info):
 @add_shop_info
 def car_detail(request, car_id, shop_info):
     try:
-        car = CarModel.objects.get(pk=car_id)
+        car = get_object_or_404(CarModel, pk=car_id)
+        similar_cars = get_similar_cars(car.type)
     except CarModel.DoesNotExist:
         raise Http404('Car not available')
+    
+    similar_cars = [similar_car for similar_car in similar_cars if similar_car.id != car.id]
     context = {
         'car': car,
         'shop_info': shop_info,
+        'similar_cars': similar_cars,
     }
     return render(request, 'rentals/car-detail.html', context)
 
