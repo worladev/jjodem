@@ -23,16 +23,31 @@
         </div>
     </div>
 
+    <div class="row"><hr><!--RECOMMENDATION SPOT-->
+        {% if similar_cars %}  
+            <h4>Check Out Similar Type of Cars</h4>
+            {% for car in similar_cars %}
+                <div class="col-2">
+                    <a href="{% url 'car-detail' car.id %}">
+                        <div class="card recommendation-card">
+                            <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title">
+                                    {{car.brand_name}} | {{car.model_name}}
+                                </h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        {% endif %} 
+    </div>
+
     <div class="row"><!--REVIEW SPOT-->
         <div class="col">
             REVIEW SPOT
         </div>
     </div>
 
-    <div class="row"><!--RECOMMENDATION SPOT-->
-        <div class="col">
-            RECOMMENDATION SPOT
-        </div>
-    </div>
     {% include 'footer.html' %}
 {% endblock content %}

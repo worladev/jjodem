@@ -72,3 +72,25 @@ div .container-fluid{
     background-color: #EAEEE9;
     text-align: center;
 }
+
+/*RECOMMENDATION*/
+.recommendation-card{
+    margin: 5% auto 5% auto;
+}
+.recommendation-card:hover{
+    border: 1px solid #008080;
+    transform: scale(1.1);
+}
+.recommendation-card img{
+    width: auto;
+    height: auto;
+}
+
+/*ABOUT TEMPLATE*/
+.about-view h2{
+    color: #008080;
+}
+.about-view p{
+    font-size: 1.1em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
