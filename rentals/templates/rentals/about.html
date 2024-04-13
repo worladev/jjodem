@@ -4,12 +4,48 @@
     {% include 'navbar.html' %}
     <div class="row about-view">
         <div class="col">
-            <p>This is the about section</p>
-        </div>
-    </div>
-    <div class="row contact-view">
-        <div class="col">
-            <p>This is the contact section</p>
+            <div class="about-view-div">
+                <h4>Who We Are</h4>
+                <p>
+                    Welcome to <b>JJODEM TRANSPORT & LOGISTICS</b>, your premier destination for reliable and convenient car <br>
+                    With a passion for exceptional service and a commitment to providing top-quality vehicles,
+                    we strive to make every journey memorable.
+                </p><hr>
+                <p>
+                    At <b>JJODEM T&L</b>, we understand that <em>flexibility, comfort, reliability</em> and <em>affordability</em> are essential when it comes to transportation.
+                    Whether you're traveling for business or pleasure, our diverse fleet of well-maintained vehicles caters to your specific needs. <br>
+
+                    Our team is dedicated to ensuring that every customer experience exceeds expectations.
+                    From the moment you book with us to the time you return the vehicle, we prioritize your satisfaction and safety.
+                </p><hr>
+                <p>
+                    We aim to make car rental simple and affordable our user-friendly booking platform with an attentive customer
+                    support to guarantee a seamless rental process from start to finish. <br>
+
+                    Join us at <b>JJODEM T&L</b> and experience the freedom of the open road with confidence.
+                    We look forward to being your trusted partner in all your travel adventures.
+                </p>
+
+                <p>
+                    <a href="">Terms & Conditions</a>
+                    <a href="">Privacy Policy</a>
+                    <a href="{% url 'inventory-list' %}">Explore Our Vehicles</a>
+                </p>
+
+                <div class="contact-view-div">
+                    <h5>Contact Details</h5>
+                    <p>
+                        <address>
+                            Box 3332 Kaneshie <br>
+                            Accra, Ghana <br>
+                        </address>  
+                    </p>
+                    <p>
+                        <a href="tel:+233547813006">Tel: +233 54 781 3006</a><br>
+                        <a href="mailto:jjodemlogistics@gmail.com">Email: jjodemlogistics@gmail.com</a>
+                    </p>
+                </div>  
+            </div>
         </div>
     </div>
     {% include 'footer.html' %}

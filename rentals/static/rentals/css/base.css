@@ -4,6 +4,17 @@ div .container-fluid{
 }
 
 /*HOME PAGE TOP SECTION*/
+.btn{
+    background-color: #2C3539 !important;
+    color: #0AFFFF !important;
+    border-radius: 18px !important;
+}
+.btn:hover{
+    background-color: #0AFFFF !important;
+    color: #2C3539 !important;
+}
+
+
 .home-intro{
     background-image: url('/static/rentals/images/road-bg.jpg');
     background-repeat: no-repeat;
@@ -26,6 +37,15 @@ div .container-fluid{
 .home-intro-landing img{
     width: 35%;
     height: 40%;
+}
+.home-intro-landing-btn{
+    background-color: #0AFFFF !important;
+    color: #2C3539 !important;
+    border-radius: 18px !important;
+}
+.home-intro-landing-btn:hover{
+    background-color: #2C3539 !important;
+    color: #0AFFFF !important;
 }
 .home-intro-truck{
     padding: 0%;
@@ -87,10 +107,40 @@ div .container-fluid{
 }
 
 /*ABOUT TEMPLATE*/
-.about-view h2{
-    color: #008080;
+.about-view{
+    padding: 5%;
 }
-.about-view p{
+.about-view-div{
+    padding: 2%;
+    width: 85%;
+    margin: auto;
+    border-radius: 25px 25px 0px 0;
+    background-color: #EAEEE9;
+    border-top: 2px solid #008080;
+    border-bottom: 1px dashed #008080;
+}
+.about-view-div p{
+    color: #2C3539;
     font-size: 1.1em;
     font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.about-view-div b, .about-view-div em{
+    color: #008080;
+    font-weight: bold;
+}
+
+
+.contact-view-div{
+    margin-top: 4%;
+}
+.contact-view-div h5{
+    text-decoration: underline;
+}
+.contact-view-div a{
+    color: #2C3539;
+    text-decoration: none;
+}
+.contact-view-div a:hover{
+    color: #008080;
+    text-decoration: underline;
 }

@@ -21,7 +21,7 @@
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'inventory-list' %}">Inventory</a></li>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="{% url 'about' %}">Contact</a></li>
                     <li><a href="">Blog</a></li>
                 </ul>
             </div>
@@ -51,8 +51,8 @@
                 <h6 class="footer-section-h6">Contact</h6>
                 <ul>
                     <li><a href="">{{info.address}}</a></li>
-                    <li><a href="">{{info.email}}</a></li>
-                    <li><a href="">{{info.mobile}}</a></li>
+                    <li><a href="mailto:jjodemlogistics@gmail.com">{{info.email}}</a></li>
+                    <li><a href="tel:+233547813006">{{info.mobile}}</a></li>
                 </ul>
             </div>
         </div>
