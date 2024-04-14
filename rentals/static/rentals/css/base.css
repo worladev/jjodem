@@ -144,3 +144,11 @@ div .container-fluid{
     color: #008080;
     text-decoration: underline;
 }
+
+/*SEARCH TEMPLATE*/
+.search-div{
+    min-height: 500px !important;
+}
+.inner-search-form{
+    width: 35%;
+}

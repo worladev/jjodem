@@ -14,7 +14,7 @@
         </div>
         <div class="col-5 home-intro-landing"><!--INTRO SPOT-->
             {% for info in shop_info %}
-                <a href=""><img src="{{info.logo.url}}" alt="JJODEM"></a>
+                <img src="{{info.logo.url}}" alt="JJODEM">
                 <P>{{info.slogan}}</P>
                 <a href="{% url 'inventory-list' %}">
                     <p class="btn btn-outline-info home-intro-landing-btn">Check Available Vehicles</p>
