@@ -69,7 +69,8 @@
                     <form action="{% url 'search' %}" method="GET">
                         {% csrf_token %}
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control form-control-sm form-style" name="search-data" placeholder="Search Here">
+                            <input type="text" class="form-control form-control-sm form-style"
+                                    name="search-data" placeholder="Search brand/model">
                             <button type="submit" class="btn-dark">
                                 <i class="bi bi-search"></i>
                             </button>

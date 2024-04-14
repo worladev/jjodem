@@ -1,9 +1,10 @@
 from functools import wraps
 from django.shortcuts import render, Http404, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse  #
 from .models import CarType, ShopInfo, CarModel
 from .recommender import get_similar_cars
-from django.db.models import Q
+from django.db.models import Q  #
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
 
 # Create your views here.
@@ -77,27 +78,34 @@ def about(request, shop_info):
 
 @add_shop_info
 def search_view(request, shop_info):
+    query = None
+    safe_query = None
+    results = []
+    
     if request.method == 'GET':
         query = request.GET.get('search-data')
         if query:
             # sanitize query to prevent SQL injection attacks
             safe_query = query.strip()  # remove leading and trailing whitespaces
             if safe_query:
-                # case-insensitive search
-                search_car = CarModel.objects.filter(
-                    Q(model_name__icontains=safe_query) |
-                    Q(description__icontains=safe_query)
-                )
+                # case-insensitive search (stemming and ranking results)
+                search_vector = SearchVector('model_name', 'description')
+                search_query = SearchQuery(safe_query)  # filter result
+                results = CarModel.objects.annotate(
+                    search=search_vector,
+                    rank=SearchRank(search_vector, search_query)  # order result by relevancy
+                ).filter(search=search_query).order_by('-rank')
             else:
-                search_car = CarModel.objects.none()  # empty query
+                results = []  # empty query
         else:
-            search_car = CarModel.objects.all()  # empty query
+            results = CarModel.objects.all()  # empty query
     else:
         return HttpResponse("Method Not Allowed", status=405)  # non-GET request
     
     context = {
         'shop_info': shop_info,
-        'search_car': search_car,
+        'safe_query': safe_query,
+        'results': results,
     }
     return render(request, 'rentals/search.html', context)
         
