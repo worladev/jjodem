@@ -66,10 +66,11 @@
                         </ul>
                     </div>
 
-                    <form action="" class="">
+                    <form action="{% url 'search' %}" method="GET">
+                        {% csrf_token %}
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control form-control-sm form-style" placeholder="Search Here">
-                            <button type="submit" class="input-group-text">
+                            <input type="text" class="form-control form-control-sm form-style" name="search-data" placeholder="Search Here">
+                            <button type="submit" class="btn-dark">
                                 <i class="bi bi-search"></i>
                             </button>
                         </div>
@@ -108,13 +109,17 @@
                 {{info.address}}
             </li>
             <li>
+                <a href="tel:+233547813006">
                 <i class="bi bi-telephone-fill"></i>
                 {{info.mobile}}
-            </li=>
+                </a>
+            </li>
             <li>
+                <a href="mailto:jjodemlogistics@gmail.com">
                 <i class="bi bi-envelope-at-fill"></i>
                 {{info.email}}
-            </li=>
+                </a>
+            </li>
         </ul>
         {% endfor %}
     </div><!--END OF CONTACT INFO NAVBAR-->

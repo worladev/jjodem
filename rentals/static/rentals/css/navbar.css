@@ -84,6 +84,10 @@ input:focus{
     margin-right: 3%;
     padding: 0.3%;
 }
+.shop-info ul li a{
+    color: #FFF6E8;
+    text-decoration: none;
+}
 
 /* MOBILE DISPLAY FOR TO NAV*/
 @media only screen and (max-width: 768px) {
