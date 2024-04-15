@@ -48,24 +48,30 @@
                         </li>
                     </ul>
 
+                    <!--Social Handles 1 -Display on Desktop-->
                     <div class="mobile-display social">
-                        <!--Social Handles 1 -Display on Desktop-->
-                        <ul>
-                            <li>
-                                <a href=""><i class="bi bi-facebook social-color"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="bi bi-whatsapp social-color"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="bi bi-twitter-x social-color"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="bi bi-instagram social-color"></i></a>
-                            </li>
-                        </ul>
+                        {% if social_handle %}
+                            <ul>
+                                {% for handle in social_handle %}
+                                    <li>
+                                        <a href="{{ handle.handle_url }}">
+                                            {% if handle.handle_name == 'Facebook' %}
+                                                <i class="bi bi-facebook social-color"></i>
+                                            {% elif handle.handle_name == 'WhatsApp' %}
+                                                <i class="bi bi-whatsapp social-color"></i>
+                                            {% elif handle_name == 'Twitter' %}
+                                                <i class="bi bi-twitter-x social-color"></i>
+                                            {% else %}
+                                                <i class="bi bi-question-circle social-color"></i>
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
 
+                    <!--Search Bar on Navebar-->
                     <form action="{% url 'search' %}" method="GET">
                         {% csrf_token %}
                         <div class="input-group mb-3">
@@ -79,21 +85,25 @@
 
                     <!--Social Handles 2 -Display on Mobile-->
                     <div class="col-2 desktop-display social">
-                        <!--Social Handles-->
-                        <ul>
-                            <li>
-                                <a href=""><i class="bi bi-facebook social-color"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="bi bi-whatsapp social-color"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="bi bi-twitter-x social-color"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="bi bi-instagram social-color"></i></a>
-                            </li>
-                        </ul>
+                        {% if social_handle %}
+                            <ul>
+                                {% for handle in social_handle %}
+                                    <li>
+                                        <a href="{{ handle.handle_url }}">
+                                            {% if handle.handle_name == 'Facebook' %}
+                                                <i class="bi bi-facebook social-color"></i>
+                                            {% elif handle.handle_name == 'WhatsApp' %}
+                                                <i class="bi bi-whatsapp social-color"></i>
+                                            {% elif handle_name == 'Twitter' %}
+                                                <i class="bi bi-twitter-x social-color"></i>
+                                            {% else %}
+                                                <i class="bi bi-question-circle social-color"></i>
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
 
                 </div>

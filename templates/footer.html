@@ -24,24 +24,6 @@
                     <li><a href="{% url 'about' %}">Contact</a></li>
                 </ul>
             </div>
-
-             <!--Social Handles-->
-             <div class="footer-social">
-                <ul>
-                    <li>
-                        <a href=""><i class="bi bi-facebook footer-social-color"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="bi bi-whatsapp footer-social-color"></i></a>
-                    </li>
-                    <li class="">
-                        <a href=""><i class="bi bi-twitter-x footer-social-color"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="bi bi-instagram footer-social-color"></i></a>
-                    </li>
-                </ul>
-            </div>
         </div>
 
         {% for info in shop_info %}
@@ -54,8 +36,32 @@
                     <li><a href="tel:+233547813006">{{info.mobile}}</a></li>
                 </ul>
             </div>
+
+            <!--Footer Social Handles-->
+            <div class="footer-social">
+                {% if social_handle %}
+                    <ul>
+                        {% for handle in social_handle %}
+                            <li>
+                                <a href="{{ handle.handle_url }}">
+                                    {% if handle.handle_name == 'Facebook' %}
+                                        <i class="bi bi-facebook social-color"></i>
+                                    {% elif handle.handle_name == 'WhatsApp' %}
+                                        <i class="bi bi-whatsapp social-color"></i>
+                                    {% elif handle_name == 'Twitter' %}
+                                        <i class="bi bi-twitter-x social-color"></i>
+                                    {% else %}
+                                        <i class="bi bi-question-circle social-color"></i>
+                                    {% endif %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
         </div>
 
+        <!--Footer Section Three-->
         <div class="col-4">
             <div class="footer-links">
                 <img src="{{info.logo.url}}" alt="jjodem-logo">
@@ -67,6 +73,7 @@
             </div>
         </div>
         {% endfor %}
+
     </div>
     
 </body>

@@ -36,8 +36,10 @@
 }
 
 /*SOCIALS*/
+.footer-social{
+    margin-left: 15%;
+}
 .footer-social ul{
-    margin-left: 15px;
     list-style-type: none;
     padding: 0px;
     text-align: left;
@@ -49,7 +51,5 @@
 }
 .footer-social li a{
     font-size: 1.3em;
-}
-.footer-social-color{
     color: #FFFFFF;
 }
