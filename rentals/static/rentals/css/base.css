@@ -47,9 +47,12 @@ div .container-fluid{
     background-color: #2C3539 !important;
     color: #0AFFFF !important;
 }
+
+/*HOME ANIMATION*/
+.home-intro-truck i{
+    font-size: 5em !important;
+}
 .home-intro-truck{
-    padding: 0%;
-    margin: 0%;
     position: relative;
     animation-name: intro-truck;
     animation-duration: 8s;
@@ -59,13 +62,14 @@ div .container-fluid{
     animation-timing-function: ease-in;
 }
 @keyframes intro-truck{
-    0% {font-size: 5em; color: #000000; left: 0px;}
-    50% {font-size: 5em; color: maroon; left: 200px;}
-    100% {font-size: 5em; color: #008080; left: 300px;}
+    0% {color: #000000; left: 0px;}
+    50% {color: maroon; left: 200px;}
+    100% {color: #008080; left: 300px;}
 }
 .animation-text{
-    font-size: 0.4em;
+    font-size: 1.8em;
 }
+
 
 /*HOME PAGE CAR TYPE SECTION*/
 .home-main-div{
@@ -128,7 +132,16 @@ div .container-fluid{
     color: #008080;
     font-weight: bold;
 }
-
+.about-view-div ul{
+    list-style-type: none;
+}
+.about-links a{
+    margin-right: 3%;
+    color: #008000;
+}
+.about-links a:hover{
+    color: #008080;
+}
 
 .contact-view-div{
     margin-top: 4%;
@@ -151,4 +164,17 @@ div .container-fluid{
 }
 .inner-search-form{
     width: 35%;
+}
+
+/*TERMS, CONDITION AND PRIVACY*/
+.tandc-privacy{
+    padding: 3%;
+    width: 85%;
+    margin: auto;
+}
+.tandc-privacy a{
+    text-decoration: none;
+}
+.tandc-privacy h4{
+    text-decoration: underline;
 }
