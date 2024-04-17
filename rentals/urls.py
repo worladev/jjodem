@@ -8,4 +8,5 @@ urlpatterns = [
     path('detail/<int:car_id>/', views.car_detail, name='car-detail'),
     path('about/', views.about, name='about'),
     path('search/', views.search_view, name='search'),
+    path('t&c-privacy/', views.terms_and_conditon_privacy, name='terms-and-condition'),
 ]

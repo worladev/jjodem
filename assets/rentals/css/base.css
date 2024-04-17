@@ -1,0 +1,158 @@
+div .container-fluid{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+/*HOME PAGE TOP SECTION*/
+.btn{
+    background-color: #2C3539 !important;
+    color: #0AFFFF !important;
+    border-radius: 18px !important;
+}
+.btn:hover{
+    background-color: #0AFFFF !important;
+    color: #2C3539 !important;
+}
+
+
+.home-intro{
+    background-image: url('/static/rentals/images/road-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px 0 18px 0;
+    padding-bottom: 1%;
+}
+.home-intro p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.home-intro-landing{
+    background-color: #008080;
+    color: #F7F7F7;
+    text-align: center;  
+    border-radius: 18px 0 18px 0;
+    padding: 0.6%;
+    height: auto;
+    margin: 1%;
+}
+.home-intro-landing img{
+    width: 35%;
+    height: 40%;
+}
+.home-intro-landing-btn{
+    background-color: #0AFFFF !important;
+    color: #2C3539 !important;
+    border-radius: 18px !important;
+}
+.home-intro-landing-btn:hover{
+    background-color: #2C3539 !important;
+    color: #0AFFFF !important;
+}
+
+/*HOME ANIMATION*/
+.home-intro-truck i{
+    font-size: 5em !important;
+}
+.home-intro-truck{
+    position: relative;
+    animation-name: intro-truck;
+    animation-duration: 8s;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+@keyframes intro-truck{
+    0% {color: #000000; left: 0px;}
+    50% {color: maroon; left: 200px;}
+    100% {color: #008080; left: 300px;}
+}
+.animation-text{
+    font-size: 1.8em;
+}
+
+
+/*HOME PAGE CAR TYPE SECTION*/
+.home-main-div{
+    padding-top: 2%;
+}
+.home-main-div a{
+    text-decoration: none;
+}
+.home-card{
+    margin: 5% auto 5% auto;
+}
+.home-card:hover{
+    border: 1px solid #008080;
+    transform: scale(1.1);
+}
+.home-card img{
+    height: 175px;
+}
+
+/*DETAIL TEMPLATE*/
+.detail-card{
+    margin: 2%;
+    padding: 2%;
+    background-color: #EAEEE9;
+    text-align: center;
+}
+
+/*RECOMMENDATION*/
+.recommendation-card{
+    margin: 5% auto 5% auto;
+}
+.recommendation-card:hover{
+    border: 1px solid #008080;
+    transform: scale(1.1);
+}
+.recommendation-card img{
+    width: auto;
+    height: auto;
+}
+
+/*ABOUT TEMPLATE*/
+.about-view{
+    padding: 5%;
+}
+.about-view-div{
+    padding: 2%;
+    width: 85%;
+    margin: auto;
+    border-radius: 25px 25px 0px 0;
+    background-color: #EAEEE9;
+    border-top: 2px solid #008080;
+    border-bottom: 1px dashed #008080;
+}
+.about-view-div p{
+    color: #2C3539;
+    font-size: 1.1em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.about-view-div b, .about-view-div em{
+    color: #008080;
+    font-weight: bold;
+}
+
+
+.contact-view-div{
+    margin-top: 4%;
+}
+.contact-view-div h5{
+    text-decoration: underline;
+}
+.contact-view-div a{
+    color: #2C3539;
+    text-decoration: none;
+}
+.contact-view-div a:hover{
+    color: #008080;
+    text-decoration: underline;
+}
+
+/*SEARCH TEMPLATE*/
+.search-div{
+    min-height: 500px !important;
+}
+.inner-search-form{
+    width: 35%;
+}
