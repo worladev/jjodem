@@ -7,7 +7,7 @@
     background-size: cover;
 }
 
-.footer-section-h6{
+.footer-section-h5{
     color: #3B9C9C;
     text-align: left;
     margin-left: 22%;
@@ -15,41 +15,41 @@
 }
 
 /*FOOTER LINKS*/
-.footer-links ul{
+.footer-ul{
     list-style-type: none;
     text-align: left;
     margin-left: 15%
 }
-.footer-links li a{
+.footer-ul li{
+    color: #EAEEE9;
+}
+.footer-ul li a{
     font-size: 1em;
     text-decoration: none;
     color: #EAEEE9;
 }
-.footer-links li a:hover{
+.footer-ul li a:hover{
     text-decoration: underline;
     color: #3B9C9C;
 }
-.footer-links img{
+.footer-sec3-div img{
     width: 35%;
     height: 40%;
     margin-left: 15%;
 }
 
 /*SOCIALS*/
-.footer-social{
-    margin-left: 15%;
-}
-.footer-social ul{
+.footer-social-ul{
     list-style-type: none;
-    padding: 0px;
-    text-align: left;
-}
-.footer-social ul li{
-    display: inline-block;
     margin: 0px 15px 0px 15px;
     padding: 0px;
+    margin-left: 21%;
 }
-.footer-social li a{
+.footer-social-ul li{
+    display: inline-block;
+    margin: 2%;
+}
+.footer-social-ul li a{
     font-size: 1.3em;
     color: #FFFFFF;
 }
