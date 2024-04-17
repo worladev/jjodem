@@ -116,3 +116,21 @@ def search_view(request, shop_info, social_handle):
         'social_handle': social_handle,
     }
     return render(request, 'rentals/search.html', context)
+
+
+@add_shop_info
+def terms_and_conditon_privacy(request, shop_info, social_handle):
+    context = {
+        'shop_info': shop_info,
+        'social_handle': social_handle,
+    }
+    return render(request, 'rentals/t-and-c-privacy.html', context)
+
+
+@add_shop_info
+def not_found_view(request, exception, shop_info, social_handle):
+    context = {
+        'shop_info': shop_info,
+        'social_handle': social_handle,
+    }
+    return render(request, '404.html', context)
