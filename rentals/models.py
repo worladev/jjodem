@@ -91,7 +91,7 @@ class ServiceReview(models.Model):
 
 
 class SocialHandle(models.Model):
-    handle_name = models.CharField(max_length=50)
+    platform = models.CharField(max_length=50)
     handle_url = models.URLField(max_length=200, blank=True)
 
     class Meta:
