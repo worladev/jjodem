@@ -50,19 +50,19 @@
 
                     <!--Social Handles 1 -Display on Desktop-->
                     <div class="mobile-display social">
-                        {% if social_handle %}
+                        {% if social_handles %}
                             <ul>
-                                {% for handle in social_handle %}
+                                {% for name, handle_url in social_handles.items %}
                                     <li>
-                                        <a href="{{ handle.handle_url }}">
-                                            {% if handle.handle_name == 'Facebook' %}
-                                                <i class="bi bi-facebook social-color"></i>
-                                            {% elif handle.handle_name == 'WhatsApp' %}
-                                                <i class="bi bi-whatsapp social-color"></i>
-                                            {% elif handle_name == 'Twitter' %}
-                                                <i class="bi bi-twitter-x social-color"></i>
+                                        <a href="{{ handle_url }}">
+                                            {% if name == 'Facebook' %}
+                                                <i class="bi bi-facebook"></i>
+                                            {% elif name == 'WhatsApp' %}
+                                                <i class="bi bi-whatsapp"></i>
+                                            {% elif name == 'Twitter' %}
+                                                <i class="bi bi-twitter-x"></i>
                                             {% else %}
-                                                <i class="bi bi-question-circle social-color"></i>
+                                                <i class="bi bi-question-circle"></i>
                                             {% endif %}
                                         </a>
                                     </li>
@@ -85,19 +85,19 @@
 
                     <!--Social Handles 2 -Display on Mobile-->
                     <div class="col-2 desktop-display social">
-                        {% if social_handle %}
+                        {% if social_handles %}
                             <ul>
-                                {% for handle in social_handle %}
+                                {% for name, handle_url in social_handles.items %}
                                     <li>
-                                        <a href="{{ handle.handle_url }}">
-                                            {% if handle.handle_name == 'Facebook' %}
-                                                <i class="bi bi-facebook social-color"></i>
-                                            {% elif handle.handle_name == 'WhatsApp' %}
-                                                <i class="bi bi-whatsapp social-color"></i>
-                                            {% elif handle_name == 'Twitter' %}
-                                                <i class="bi bi-twitter-x social-color"></i>
+                                        <a href="{{ handle_url }}">
+                                            {% if name == 'Facebook' %}
+                                                <i class="bi bi-facebook"></i>
+                                            {% elif name == 'WhatsApp' %}
+                                                <i class="bi bi-whatsapp"></i>
+                                            {% elif name == 'Twitter' %}
+                                                <i class="bi bi-twitter-x"></i>
                                             {% else %}
-                                                <i class="bi bi-question-circle social-color"></i>
+                                                <i class="bi bi-question-circle"></i>
                                             {% endif %}
                                         </a>
                                     </li>
@@ -113,26 +113,26 @@
 
     <!--CONTACT INFO NAVBAR-->
     <div class="row shop-info mobile-display sticky-top">
-        {% for info in shop_info %}
+        {% if shop_info %}
         <ul>
             <li>
                 <i class="bi bi-pin-map-fill"></i>
-                {{info.address}}
+                {{shop_info.address}}
             </li>
             <li>
                 <a href="tel:+233547813006">
                 <i class="bi bi-telephone-fill"></i>
-                {{info.mobile}}
+                {{shop_info.mobile}}
                 </a>
             </li>
             <li>
                 <a href="mailto:jjodemlogistics@gmail.com">
                 <i class="bi bi-envelope-at-fill"></i>
-                {{info.email}}
+                {{shop_info.email}}
                 </a>
             </li>
         </ul>
-        {% endfor %}
+        {% endif %}
     </div><!--END OF CONTACT INFO NAVBAR-->
 </body>
 </html>

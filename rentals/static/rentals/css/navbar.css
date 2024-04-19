@@ -48,10 +48,8 @@
     margin-right: 10px;
     padding: 0px;
 }
-.social li a{
+.social ul li a{
     font-size: 1.2em;
-}
-.social-color{
     color: #2C3539;
 }
 

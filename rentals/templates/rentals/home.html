@@ -13,13 +13,13 @@
             <h4>Explore Our Car Types...</h4>
         </div>
         <div class="col-5 home-intro-landing"><!--INTRO SPOT-->
-            {% for info in shop_info %}
-                <img src="{{info.logo.url}}" alt="JJODEM">
-                <P>{{info.slogan}}</P>
+            {% if shop_info %}
+                <img src="{{shop_info.logo.url}}" alt="JJODEM">
+                <P>{{shop_info.slogan}}</P>
                 <a href="{% url 'inventory-list' %}">
                     <p class="btn btn-outline-info home-intro-landing-btn">Check Available Vehicles</p>
                 </a>
-            {% endfor %}
+            {% endif %}
         </div>
     </div>
 

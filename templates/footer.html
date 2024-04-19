@@ -27,53 +27,53 @@
             </div>
         </div>
 
-        {% for info in shop_info %}
-        <div class="col-4">
-            <div>
-                <h5 class="footer-section-h5">Contact</h5>
-                <ul class="footer-ul">
-                    <li>{{info.address}}</li>
-                    <li><a href="mailto:jjodemlogistics@gmail.com">{{info.email}}</a></li>
-                    <li><a href="tel:+233547813006">{{info.mobile}}</a></li>
-                </ul>
-            </div>
-
-            <!--Footer Social Handles-->
-            <div>
-                {% if social_handle %}
-                    <ul class="footer-social-ul">
-                        {% for handle in social_handle %}
-                            <li>
-                                <a href="{{ handle.handle_url }}">
-                                    {% if handle.handle_name == 'Facebook' %}
-                                        <i class="bi bi-facebook"></i>
-                                    {% elif handle.handle_name == 'WhatsApp' %}
-                                        <i class="bi bi-whatsapp"></i>
-                                    {% elif handle_name == 'Twitter' %}
-                                        <i class="bi bi-twitter-x"></i>
-                                    {% else %}
-                                        <i class="bi bi-question-circle"></i>
-                                    {% endif %}
-                                </a>
-                            </li>
-                        {% endfor %}
+        {% if shop_info %}
+            <div class="col-4">
+                <div>
+                    <h5 class="footer-section-h5">Contact</h5>
+                    <ul class="footer-ul">
+                        <li>{{shop_info.address}}</li>
+                        <li><a href="mailto:jjodemlogistics@gmail.com">{{shop_info.email}}</a></li>
+                        <li><a href="tel:+233547813006">{{shop_info.mobile}}</a></li>
                     </ul>
-                {% endif %}
-            </div>
-        </div>
+                </div>
 
-        <!--Footer Section Three-->
-        <div class="col-4">
-            <div class="footer-sec3-div">
-                <img src="{{info.logo.url}}" alt="jjodem-logo">
-                <ul class="footer-ul">
-                    <li><a href="{% url 'terms-and-condition' %}">Terms and Conditions</a></li>
-                    <li><a href="{% url 'terms-and-condition' %}">Privacy Policy</a></li>
-                    <li>&copy; {% current_year %} JJODEM LOGISTICS. <br> All rights reserved.</li>
-                </ul>
+                <!--Footer Social Handles-->
+                <div>
+                    {% if social_handles %}
+                        <ul class="footer-social-ul">
+                            {% for name, handle_url in social_handles.items %}
+                                <li>
+                                    <a href="{{ handle_url }}">
+                                        {% if name == 'Facebook' %}
+                                            <i class="bi bi-facebook"></i>
+                                        {% elif name == 'WhatsApp' %}
+                                            <i class="bi bi-whatsapp"></i>
+                                        {% elif name == 'Twitter' %}
+                                            <i class="bi bi-twitter-x"></i>
+                                        {% else %}
+                                            <i class="bi bi-question-circle"></i>
+                                        {% endif %}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        {% endfor %}
+
+            <!--Footer Section Three-->
+            <div class="col-4">
+                <div class="footer-sec3-div">
+                    <img src="{{shop_info.logo.url}}" alt="jjodem-logo">
+                    <ul class="footer-ul">
+                        <li><a href="{% url 'terms-and-condition' %}">Terms and Conditions</a></li>
+                        <li><a href="{% url 'terms-and-condition' %}">Privacy Policy</a></li>
+                        <li>&copy; {% current_year %} JJODEM LOGISTICS. <br> All rights reserved.</li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
 
     </div>
     
