@@ -7,84 +7,55 @@ from django.db.models import Q  #
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
 
-# Create your views here.
-def add_shop_info(view_info_func):
-    @wraps(view_info_func)
-    def _wrapped_view(request, *args, **kwargs):
-        shop_info = ShopInfo.objects.all()
-        social_handle = SocialHandle.objects.all()
-        response = view_info_func(request, *args, shop_info=shop_info, social_handle=social_handle, **kwargs)
-        if isinstance(response, dict):
-            response['shop_info'] = shop_info
-            response['social_info'] = social_handle
-        return response
-    return _wrapped_view
-
-
-@add_shop_info
-def home(request, shop_info, social_handle):
+# HOME VIEW
+def home(request):
     car_type = CarType.objects.filter(is_available=True)
     context = {
         'car_type': car_type,
-        'shop_info': shop_info,
-        'social_handle': social_handle,
         }
     return render(request, 'rentals/home.html', context)
 
 
-@add_shop_info
-def filter_cars(request, car_type_id, shop_info, social_handle):
+# FILTER CARS VIEW
+def filter_cars(request, car_type_id):
     car_type = CarType.objects.get(pk=car_type_id)
     filter_car = CarModel.objects.filter(type=car_type, is_available=True)
     context = {
         'car_type': car_type,
         'filter_car': filter_car,
-        'shop_info': shop_info,
-        'social_handle': social_handle,
         }
     return render(request, 'rentals/filter-cars.html', context)
 
 
-@add_shop_info
-def inventory_list(request, shop_info, social_handle):
+# ALL INVENTORY LIST VIEW
+def inventory_list(request):
     car_models = CarModel.objects.filter(is_available=True)
     context = {
         'car_models': car_models,
-        'shop_info': shop_info,
-        'social_handle': social_handle,
     }
     return render(request, 'rentals/inventory-list.html', context)
 
 
-@add_shop_info
-def car_detail(request, car_id, shop_info, social_handle):
-    try:
-        car = get_object_or_404(CarModel, pk=car_id)
-        similar_cars = get_similar_cars(car.type) # recommendation function call
-    except CarModel.DoesNotExist:
-        raise Http404('Car not available')
+# CAR DETAIL VIEW
+def car_detail(request, car_id):
+    car = CarModel.objects.all(pk=car_id)
+    similar_cars = get_similar_cars(car.type) # recommendation function call
     # exclude the current car from the recommended cars
     similar_cars = [similar_car for similar_car in similar_cars if similar_car.id != car.id]
     context = {
         'car': car,
-        'shop_info': shop_info,
         'similar_cars': similar_cars,
-        'social_handle': social_handle,
     }
     return render(request, 'rentals/car-detail.html', context)
 
 
-@add_shop_info
-def about(request, shop_info, social_handle):
-    context = {
-        'shop_info': shop_info,
-        'social_handle': social_handle,
-    }
-    return render(request, 'rentals/about.html', context)
+# ABOUT VIEW
+def about(request):
+    return render(request, 'rentals/about.html')
 
 
-@add_shop_info
-def search_view(request, shop_info, social_handle):
+# DATA SEARCH VIEW
+def search_view(request):
     query = None
     safe_query = None
     results = []
@@ -110,27 +81,17 @@ def search_view(request, shop_info, social_handle):
         return HttpResponse("Method Not Allowed", status=405)  # non-GET request
     
     context = {
-        'shop_info': shop_info,
         'safe_query': safe_query,
         'results': results,
-        'social_handle': social_handle,
     }
     return render(request, 'rentals/search.html', context)
 
 
-@add_shop_info
-def terms_and_conditon_privacy(request, shop_info, social_handle):
-    context = {
-        'shop_info': shop_info,
-        'social_handle': social_handle,
-    }
-    return render(request, 'rentals/t-and-c-privacy.html', context)
+# TERMS AND PRIVACY POLICY VIEW
+def terms_and_conditon_privacy(request):
+    return render(request, 'rentals/t-and-c-privacy.html')
 
 
-@add_shop_info
-def not_found_view(request, exception, shop_info, social_handle):
-    context = {
-        'shop_info': shop_info,
-        'social_handle': social_handle,
-    }
-    return render(request, '404.html', context)
+# CUSTOM 404 ERROR PAGE VIEW
+def not_found_view(request):
+    return render(request, '404.html', status=404)
