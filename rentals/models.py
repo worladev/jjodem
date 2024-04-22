@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class CarType(models.Model):
-    type_image = models.ImageField(upload_to='type/%Y/%m/%d', blank=True)
+    type_image = models.ImageField(upload_to='type_upload/', blank=True)
     type_name = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
     is_available = models.BooleanField(default=False)
@@ -36,7 +36,7 @@ class CarModel(models.Model):
     type = models.ForeignKey(CarType, on_delete=models.CASCADE)
     brand_name = models.CharField(max_length=50)
     model_name = models.CharField(max_length=200)
-    model_image = models.ImageField(upload_to='car/%Y/%m/%d', blank=True)
+    model_image = models.ImageField(upload_to='model_upload/', blank=True)
     number_of_doors = models.PositiveIntegerField()
     number_of_passengers = models.PositiveIntegerField()
     fuel = models.CharField(choices=FUEL, max_length=50, default=None)
@@ -57,7 +57,7 @@ class CarModel(models.Model):
 
 class ShopInfo(models.Model):
     name = models.CharField(max_length=50)
-    logo = models.ImageField(upload_to='car/%Y/%m/%d', blank=True)
+    logo = models.ImageField(upload_to='model_upload/', blank=True)
     slogan = models.CharField(max_length=150)
     address = models.CharField(max_length=150)
     mobile = models.CharField(max_length=100)
@@ -99,4 +99,4 @@ class SocialHandle(models.Model):
         verbose_name_plural = 'handles'
 
     def __str__(self):
-        return self.handle_name
+        return self.platform
