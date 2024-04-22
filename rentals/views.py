@@ -38,7 +38,7 @@ def inventory_list(request):
 
 # CAR DETAIL VIEW
 def car_detail(request, car_id):
-    car = CarModel.objects.all(pk=car_id)
+    car = CarModel.objects.get(pk=car_id)
     similar_cars = get_similar_cars(car.type) # recommendation function call
     # exclude the current car from the recommended cars
     similar_cars = [similar_car for similar_car in similar_cars if similar_car.id != car.id]

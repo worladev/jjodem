@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'jjodemrentals.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rental',
+        'NAME': 'rentals',
         'USER': 'jjodem',
         'PASSWORD': 'jjodem@DB',
     }
