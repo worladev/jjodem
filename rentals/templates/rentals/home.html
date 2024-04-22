@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% block title %}Home{% endblock %}
 {% block content %}
     {% include 'navbar.html' %}
     
@@ -12,7 +13,7 @@
             <hr>
             <h4>Explore Our Car Types...</h4>
         </div>
-        <div class="col-5 home-intro-landing"><!--INTRO SPOT-->
+        <div class="col-4 home-intro-landing"><!--INTRO SPOT-->
             {% if shop_info %}
                 <img src="{{shop_info.logo.url}}" alt="JJODEM">
                 <P>{{shop_info.slogan}}</P>
