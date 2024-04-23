@@ -4,7 +4,7 @@
 {% block content %}
     {% include 'navbar.html' %}
     <div class="row" style="background-color: #FFF0F5;">
-        <div class="col">
+        <div class="col-12">
             <div class="detail-card">
                 <img src="{{car.model_image.url}}" style="width: 50%; height: 65%;" alt="...">
                 <h5 class="">{{car.brand_name}} | {{car.model_name}}</h5>
@@ -28,7 +28,7 @@
         {% if similar_cars %}  
             <h4>Check Out Similar Type of Cars</h4>
             {% for car in similar_cars %}
-                <div class="col-2">
+                <div class="col-sm-6 col-md-3 col-lg-2">
                     <a href="{% url 'car-detail' car.id %}">
                         <div class="card recommendation-card">
                             <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
@@ -45,7 +45,7 @@
     </div>
 
     <div class="row"><!--REVIEW SPOT-->
-        <div class="col">
+        <div class="col-sm-6 col-md-3 col-lg-2">
             REVIEW SPOT
         </div>
     </div>
