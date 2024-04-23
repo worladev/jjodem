@@ -4,7 +4,7 @@
 {% block content %}
     {% include 'navbar.html' %}
     <div class="row search-div">
-        <div class="col about-view-div">
+        <div class="col-12 about-view-div">
             <div class="tandc-privacy">
                 <h3><b>JJODEM LOGISTICS LTD.</b></h3><hr>
                 <!--TERMS AND CONDITION-->
@@ -186,8 +186,8 @@
                             </address>  
                         </p>
                         <p>
-                            <a href="tel:+233547813006">Tel: +233 54 781 3006</a><br>
-                            <a href="mailto:jjodemlogistics@gmail.com">Email: jjodemlogistics@gmail.com</a>
+                            <a href="tel:+233547813006">Tel: {{shop_info.mobile}}</a><br>
+                            <a href="mailto:jjodemlogistics@gmail.com">Email: {{shop_info.email}}</a>
                         </p>
                     </dd>
                 </dl>
