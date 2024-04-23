@@ -15,7 +15,7 @@
 <body>
     
     <div class="row footer">
-        <div class="col-4">
+        <div class="col-sm-6 col-md-4 col-lg-4 border-bottom">
             <div>
                 <h5 class="footer-section-h5">Quick Links</h5>
                 <ul class="footer-ul">
@@ -28,13 +28,13 @@
         </div>
 
         {% if shop_info %}
-            <div class="col-4">
+            <div class="col-sm-6 col-md-4 col-lg-4 border-bottom">
                 <div>
                     <h5 class="footer-section-h5">Contact</h5>
                     <ul class="footer-ul">
                         <li>{{shop_info.address}}</li>
-                        <li><a href="mailto:jjodemlogistics@gmail.com">{{shop_info.email}}</a></li>
-                        <li><a href="tel:+233547813006">{{shop_info.mobile}}</a></li>
+                        <li><a href="mailto:jjodemlogistics@gmail.com">Email: {{shop_info.email}}</a></li>
+                        <li><a href="tel:+233547813006">Tel: {{shop_info.mobile}}</a></li>
                     </ul>
                 </div>
 
@@ -63,18 +63,22 @@
             </div>
 
             <!--Footer Section Three-->
-            <div class="col-4">
+            <div class="col-sm-6 col-md-4 col-lg-4 border-bottom">
                 <div class="footer-sec3-div">
                     <img src="{{shop_info.logo.url}}" alt="jjodem-logo">
                     <ul class="footer-ul">
                         <li><a href="{% url 'terms-and-condition' %}">Terms and Conditions</a></li>
                         <li><a href="{% url 'terms-and-condition' %}">Privacy Policy</a></li>
-                        <li>&copy; {% current_year %} JJODEM LOGISTICS. <br> All rights reserved.</li>
                     </ul>
                 </div>
             </div>
         {% endif %}
 
+        <div class="row copyright">
+            <div class="col">
+                <p>&copy; {% current_year %} JJODEM LOGISTICS. All rights reserved.</p>
+            </div>
+        </div>    
     </div>
     
 </body>

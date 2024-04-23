@@ -53,3 +53,17 @@
     font-size: 1.3em;
     color: #FFFFFF;
 }
+
+.copyright{
+    color: #EAEEE9;
+    text-align: center;
+    padding: 0%;
+    margin: 0%;
+}
+
+/*BORDER BOTTOM ON MOBILE DISPLAY*/
+@media only screen and (max-width: 576px) {
+    .border-bottom{
+        border-bottom: 1px outset #EAEEE9;
+    }
+}

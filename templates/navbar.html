@@ -114,7 +114,23 @@
     <!--CONTACT INFO NAVBAR-->
     <div class="row shop-info mobile-display sticky-top">
         {% if shop_info %}
-        <ul>
+            <div class="col-lg-4">
+                <i class="bi bi-pin-map-fill"></i>
+                {{shop_info.address}}
+            </div>
+            <div class="col-lg-4">
+                <a href="tel:+233547813006">
+                    <i class="bi bi-telephone-fill"></i>
+                    {{shop_info.mobile}}
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <a href="mailto:jjodemlogistics@gmail.com">
+                    <i class="bi bi-envelope-at-fill"></i>
+                    {{shop_info.email}}
+                </a>
+            </div>
+        <!-- <ul>
             <li>
                 <i class="bi bi-pin-map-fill"></i>
                 {{shop_info.address}}
@@ -131,7 +147,7 @@
                 {{shop_info.email}}
                 </a>
             </li>
-        </ul>
+        </ul> -->
         {% endif %}
     </div><!--END OF CONTACT INFO NAVBAR-->
 </body>

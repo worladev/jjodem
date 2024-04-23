@@ -71,12 +71,16 @@ input:focus{
 
 /*CONTACT INFO NAVBAR*/
 .shop-info{
-    text-align: right;
-    padding: 0% !important;
-    margin: 0% !important;
-    
+    text-align: center;
+    background-color: #2C3539;
+    margin-bottom: 2% !important;
+    color: #FFE6E8;
 }
-.shop-info ul{
+.shop-info a{
+    color: #FFE6E8;
+    text-decoration: none;
+}
+/* .shop-info ul{
     padding: 0 !important;
     background-color: #2C3539;
     text-align: right;
@@ -91,15 +95,16 @@ input:focus{
 .shop-info ul li a{
     color: #FFF6E8;
     text-decoration: none;
-}
+} */
 
-/* MOBILE DISPLAY FOR TO NAV*/
+/* MOBILE DISPLAY FOR TOP NAV*/
 @media only screen and (max-width: 768px) {
     .mobile-display {
         display: none;
     }
 }
 
+/* DESKTOP DISPLAY FOR TOP NAV*/
 @media only screen and (min-width: 768px) {
     .desktop-display {
         display: none;
