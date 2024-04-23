@@ -174,6 +174,10 @@ div .container-fluid{
 }
 .tandc-privacy a{
     text-decoration: none;
+    color: #2C3539;
+}
+.tandc-privacy a:hover{
+    text-decoration: underline;
 }
 .tandc-privacy h4{
     text-decoration: underline;
