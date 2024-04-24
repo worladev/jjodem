@@ -15,7 +15,8 @@
 <body>
     
     <div class="row footer">
-        <div class="col-sm-6 col-md-4 col-lg-4 border-bottom">
+        <!--Footer Left Section-->
+        <div class="col-sm-6 col-md-4 col-lg-4">
             <div>
                 <h5 class="footer-section-h5">Quick Links</h5>
                 <ul class="footer-ul">
@@ -23,18 +24,29 @@
                     <li><a href="{% url 'inventory-list' %}">Inventory</a></li>
                     <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'about' %}">Contact</a></li>
+                    <li><a href="{% url 'terms-and-condition' %}">Terms and Conditions</a></li>
+                    <li><a href="{% url 'terms-and-condition' %}">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
 
         {% if shop_info %}
-            <div class="col-sm-6 col-md-4 col-lg-4 border-bottom">
+             <!--Footer Middle Section-->
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="footer-sec3-div">
+                    <a href="{% url 'home' %}"><img src="{{ shop_info.logo.url }}" alt="jjodem-logo"></a>
+                    <p>{{shop_info.slogan}}</p>
+                </div>
+            </div>
+
+            <!--Footer Right Section-->
+            <div class="col-sm-6 col-md-4 col-lg-4">
                 <div>
                     <h5 class="footer-section-h5">Contact</h5>
                     <ul class="footer-ul">
-                        <li>{{shop_info.address}}</li>
-                        <li><a href="mailto:jjodemlogistics@gmail.com">Email: {{shop_info.email}}</a></li>
-                        <li><a href="tel:+233547813006">Tel: {{shop_info.mobile}}</a></li>
+                        <li>{{ shop_info.address }}</li>
+                        <li><a href="mailto:jjodemlogistics@gmail.com">Email: {{ shop_info.email }}</a></li>
+                        <li><a href="tel:+233547813006">Tel: {{ shop_info.mobile }}</a></li>
                     </ul>
                 </div>
 
@@ -59,17 +71,6 @@
                             {% endfor %}
                         </ul>
                     {% endif %}
-                </div>
-            </div>
-
-            <!--Footer Section Three-->
-            <div class="col-sm-6 col-md-4 col-lg-4 border-bottom">
-                <div class="footer-sec3-div">
-                    <img src="{{shop_info.logo.url}}" alt="jjodem-logo">
-                    <ul class="footer-ul">
-                        <li><a href="{% url 'terms-and-condition' %}">Terms and Conditions</a></li>
-                        <li><a href="{% url 'terms-and-condition' %}">Privacy Policy</a></li>
-                    </ul>
                 </div>
             </div>
         {% endif %}
