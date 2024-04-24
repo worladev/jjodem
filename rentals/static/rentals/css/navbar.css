@@ -64,7 +64,6 @@ input::placeholder {
     color: #2C3539 !important;
     font-style: italic;
 }
-
 input:focus{
     background-color: #FFFFFF !important;
 }
@@ -80,22 +79,6 @@ input:focus{
     color: #FFE6E8;
     text-decoration: none;
 }
-/* .shop-info ul{
-    padding: 0 !important;
-    background-color: #2C3539;
-    text-align: right;
-    list-style-type: none;
-}
-.shop-info ul li{
-    display: inline-block;
-    color: #FFE6E8;
-    margin-right: 3%;
-    padding: 0.3%;
-}
-.shop-info ul li a{
-    color: #FFF6E8;
-    text-decoration: none;
-} */
 
 /* MOBILE DISPLAY FOR TOP NAV*/
 @media only screen and (max-width: 768px) {
