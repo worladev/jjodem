@@ -87,6 +87,11 @@ def search_view(request):
     return render(request, 'rentals/search.html', context)
 
 
+# BOOKING VIEW
+def booking(request):
+    return render(request, 'rentals/booking.html')
+
+
 # TERMS AND PRIVACY POLICY VIEW
 def terms_and_conditon_privacy(request):
     return render(request, 'rentals/t-and-c-privacy.html')
