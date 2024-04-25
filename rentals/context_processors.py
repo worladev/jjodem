@@ -17,7 +17,7 @@ def social_handles_context(request):
     for handle in social_handle:
         social_handles[handle.platform] = handle.handle_url
     context = {
-        'social_handles': social_handles
+        'social_handles': social_handles,
     }
     return context
     

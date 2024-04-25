@@ -11,7 +11,7 @@ import os
 class ModelTestCase(TestCase):
     def setUp(self):
         self.image_path = 'media/defender.jpg'
-    
+        
         with open(self.image_path, 'rb') as file:
             self.image_data = file.read()
             
@@ -29,7 +29,6 @@ class ModelTestCase(TestCase):
             is_available = True
         )
         
-        
         # car model instance
         self.car_model_instance = CarModel.objects.create(
             type = self.car_type_instance,
@@ -39,9 +38,9 @@ class ModelTestCase(TestCase):
             number_of_doors = 4,
             number_of_passengers = 4,
             fuel = "Gasoline",
-            transmission = "Manual",
+            transmission = "Automatic",
             drive_type = "4WD",
-            description = "Jjodem rentals model",
+            description = "Jjodem rental type",
             is_available = True,
             price = 750,
         )
@@ -56,8 +55,7 @@ class ModelTestCase(TestCase):
     
     # TEST FOR CarType MODEL
     def test_model_CarType(self):
-        # Get saved car type instance
-        saved_car_type_instance = CarType.objects.get(pk=self.car_type_instance.pk)
+        saved_car_type_instance = CarType.objects.get(id=self.car_type_instance.id)
         
         '''
         TEST:
@@ -67,6 +65,7 @@ class ModelTestCase(TestCase):
         # if the str() function returns the model name as specified in the model
         # if the test instance is the same as the CarModel
         '''
+        
         self.assertIsNotNone(saved_car_type_instance.type_image)
         self.assertEqual(CarType.objects.count(), 1)
         self.assertEqual(saved_car_type_instance.type_image, 'type_upload/test_image.jpg')
