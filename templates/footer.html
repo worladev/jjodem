@@ -54,14 +54,14 @@
                 <div>
                     {% if social_handles %}
                         <ul class="footer-social-ul">
-                            {% for name, handle_url in social_handles.items %}
+                            {% for platform, handle_url in social_handles.items %}
                                 <li>
                                     <a href="{{ handle_url }}" target="_blank">
-                                        {% if name == 'Facebook' %}
+                                        {% if platform == 'Facebook' %}
                                             <i class="bi bi-facebook"></i>
-                                        {% elif name == 'WhatsApp' %}
+                                        {% elif platform == 'WhatsApp' %}
                                             <i class="bi bi-whatsapp"></i>
-                                        {% elif name == 'Twitter' %}
+                                        {% elif platform == 'Twitter' %}
                                             <i class="bi bi-twitter-x"></i>
                                         {% else %}
                                             <i class="bi bi-question-circle"></i>

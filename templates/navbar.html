@@ -48,18 +48,18 @@
                         </li>
                     </ul>
 
-                    <!--Social Handles 1 -Display on Desktop-->
-                    <div class="mobile-display social">
+                    <!--Social Handles 1: Don't Display on Mobile-->
+                    <div class="mobile-no-display social">
                         {% if social_handles %}
                             <ul>
-                                {% for name, handle_url in social_handles.items %}
+                                {% for platform, handle_url in social_handles.items %}
                                     <li>
                                         <a href="{{ handle_url }}" target="_blank">
-                                            {% if name == 'Facebook' %}
+                                            {% if platform == 'Facebook' %}
                                                 <i class="bi bi-facebook"></i>
-                                            {% elif name == 'WhatsApp' %}
+                                            {% elif platform == 'WhatsApp' %}
                                                 <i class="bi bi-whatsapp"></i>
-                                            {% elif name == 'Twitter' %}
+                                            {% elif platform == 'Twitter' %}
                                                 <i class="bi bi-twitter-x"></i>
                                             {% else %}
                                                 <i class="bi bi-question-circle"></i>
@@ -83,18 +83,18 @@
                         </div>
                     </form>
 
-                    <!--Social Handles 2 -Display on Mobile-->
-                    <div class="col-2 desktop-display social">
+                    <!--Social Handles 2: Don't Display on Desktop-->
+                    <div class="col-2 desktop-no-display social">
                         {% if social_handles %}
                             <ul>
-                                {% for name, handle_url in social_handles.items %}
+                                {% for platform, handle_url in social_handles.items %}
                                     <li>
                                         <a href="{{ handle_url }}" target="_blank">
-                                            {% if name == 'Facebook' %}
+                                            {% if platform == 'Facebook' %}
                                                 <i class="bi bi-facebook"></i>
-                                            {% elif name == 'WhatsApp' %}
+                                            {% elif platform == 'WhatsApp' %}
                                                 <i class="bi bi-whatsapp"></i>
-                                            {% elif name == 'Twitter' %}
+                                            {% elif platform == 'Twitter' %}
                                                 <i class="bi bi-twitter-x"></i>
                                             {% else %}
                                                 <i class="bi bi-question-circle"></i>

@@ -80,16 +80,16 @@ input:focus{
     text-decoration: none;
 }
 
-/* MOBILE DISPLAY FOR TOP NAV*/
+/* DON'T SHOW ON MOBILE TOP NAV*/
 @media only screen and (max-width: 768px) {
-    .mobile-display {
+    .mobile-no-display {
         display: none;
     }
 }
 
-/* DESKTOP DISPLAY FOR TOP NAV*/
+/* DON'T SHOW ON DESKTOP TOP NAV*/
 @media only screen and (min-width: 768px) {
-    .desktop-display {
+    .desktop-no-display {
         display: none;
     }
 }

@@ -3,24 +3,34 @@
 {% block title %}Home{% endblock %}
 {% block content %}
     {% include 'navbar.html' %}
-    
-    <div class="row home-intro">
-        <div class="col-sm col-md col-lg">
-            <div class="home-intro-truck">
-                <i class="bi bi-truck"></i>
-                <p class="animation-text">Car Rentals</p>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-4 home-intro-landing"><!--INTRO SPOT-->
+
+    <div style="min-height: 50px;"></div>
+    <div class="row">
+        <!--INTRO DIV-->
+        <div class="col-sm col-md-4 col-lg-4 home-intro-landing"><!--INTRO SPOT-->
             {% if shop_info %}
                 <img src="{{shop_info.logo.url}}" alt="JJODEM">
                 <P>{{shop_info.slogan}}</P>
                 <a href="{% url 'inventory-list' %}">
-                    <p class="btn btn-outline-info home-intro-landing-btn">Check Available Vehicles</p>
+                    <p class="btn btn-outline-info home-intro-landing-btn">
+                        Check Available Vehicles
+                    </p>
                 </a>
             {% endif %}
         </div>
+
+        <!--ANIMATION DIV-->
+        <div class="col-sm col-md col-lg home-intro">
+            <div class="home-intro-truck">
+                <i class="bi bi-truck"></i>
+                <p class="animie">
+                    Welcome To JJODEM <br>Car Rentals.
+                </p>
+            </div>
+        </div>
+
     </div>
+
 
     <!--HOME CARD FOR CAR TYPE-->
     <div class="row home-main-div" style="background-color: #F7F7F7;">

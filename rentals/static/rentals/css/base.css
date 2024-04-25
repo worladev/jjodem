@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 div .container-fluid{
     margin: 0px !important;
     padding: 0px !important;
@@ -16,11 +20,9 @@ div .container-fluid{
 
 
 .home-intro{
-    background-image: url('/static/rentals/images/road-bg.jpg');
+    background-image: url('/static/rentals/images/winding-road.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 0px 0 18px 0;
-    padding-bottom: 1%;
 }
 .home-intro p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -32,7 +34,7 @@ div .container-fluid{
     border-radius: 18px 0 18px 0;
     padding: 0.6%;
     height: auto;
-    margin: 1%;
+    /* margin-top: 4%; */
 }
 .home-intro-landing img{
     width: 35%;
@@ -50,7 +52,7 @@ div .container-fluid{
 
 /*HOME ANIMATION*/
 .home-intro-truck i{
-    font-size: 5em !important;
+    font-size: 4em !important;
 }
 .home-intro-truck{
     position: relative;
@@ -63,11 +65,11 @@ div .container-fluid{
 }
 @keyframes intro-truck{
     0% {color: #000000; left: 0px;}
-    50% {color: maroon; left: 200px;}
-    100% {color: #008080; left: 300px;}
+    50% {color: maroon; left: 100px;}
+    100% {color: #008080; left: 200px;}
 }
-.animation-text{
-    font-size: 1.8em;
+.animie{
+    font-size: 1.4em;
 }
 
 
