@@ -1,10 +1,9 @@
-from functools import wraps
 from django.shortcuts import render, Http404, get_object_or_404
 from django.http import HttpResponse  #
-from .models import CarType, ShopInfo, CarModel, SocialHandle
+from .models import CarType, CarModel
 from .recommender import get_similar_cars
-from django.db.models import Q  #
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # HOME VIEW
@@ -56,33 +55,38 @@ def about(request):
 
 # DATA SEARCH VIEW
 def search_view(request):
-    query = None
-    safe_query = None
+    if request.method != 'GET':
+        return HttpResponse("Method Not Allowed", status=405)
+    
     results = []
+    search_results = None
+    safe_query = None
+    query = request.GET.get('data')
+    safe_query = query.strip() if query else None #
     
-    if request.method == 'GET':
-        query = request.GET.get('search-data')
-        if query:
-            # sanitize query to prevent SQL injection attacks
-            safe_query = query.strip()  # remove leading and trailing whitespaces
-            if safe_query:
-                # case-insensitive search (stemming and ranking results)
-                search_vector = SearchVector('model_name', 'description')
-                search_query = SearchQuery(safe_query)  # filter result
-                results = CarModel.objects.annotate(
-                    search=search_vector,
-                    rank=SearchRank(search_vector, search_query)  # order result by relevancy
-                ).filter(search=search_query).order_by('-rank')
-            else:
-                results = []  # empty query
-        else:
-            results = CarModel.objects.all()  # empty query
-    else:
-        return HttpResponse("Method Not Allowed", status=405)  # non-GET request
+    # Perform the search
+    if safe_query:
+        search_query = SearchQuery(safe_query)  # filter result
+        search_vector = SearchVector('model_name', 'description', 'type__type_name')
+        results = CarModel.objects.annotate(
+            search=search_vector,
+            rank=SearchRank(search_vector, search_query)  # order result by relevancy
+        ).filter(search=search_query).order_by('-rank')
     
+    paginator = Paginator(results, 6)
+    page = request.GET.get('page')
+    
+    try:
+        search_results = paginator.page(page)
+    except PageNotAnInteger:
+        search_results = paginator.page(1)
+    except EmptyPage:
+        search_results = paginator.page(paginator.num_pages)
+        
     context = {
         'safe_query': safe_query,
-        'results': results,
+        'search_results': search_results,
+        'paginator': paginator if query else None
     }
     return render(request, 'rentals/search.html', context)
 
