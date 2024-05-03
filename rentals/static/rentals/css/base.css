@@ -17,7 +17,14 @@ div .container-fluid{
     background-color: #0AFFFF !important;
     color: #2C3539 !important;
 }
-
+.home-img{
+    background-image: url('/static/rentals/images/home-bg-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top:10%;
+    padding-bottom: 2%;
+}
 
 .home-intro{
     background-image: url('/static/rentals/images/winding-road.jpg');
@@ -34,6 +41,8 @@ div .container-fluid{
     border-radius: 18px 0 18px 0;
     padding: 0.6%;
     height: auto;
+    float: right;
+    border: 2px solid #F7F7F7;
     /* margin-top: 4%; */
 }
 .home-intro-landing img{
@@ -130,7 +139,7 @@ div .container-fluid{
     font-size: 1.1em;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
-.about-view-div b, .about-view-div em{
+.about-view-div b{
     color: #008080;
     font-weight: bold;
 }
@@ -161,7 +170,17 @@ div .container-fluid{
 }
 
 /*SEARCH TEMPLATE*/
+.search-view-div{
+    padding: 2%;
+    width: auto;
+    margin: auto;
+    border-radius: 25px 25px 0px 0;
+    background-color: #EAEEE9;
+    border-top: 2px solid #008080;
+    border-bottom: 1px dashed #008080;
+}
 .search-div{
+    padding-top: 3%;
     min-height: 500px !important;
 }
 .inner-search-form{
@@ -183,4 +202,20 @@ div .container-fluid{
 }
 .tandc-privacy h4{
     text-decoration: underline;
+}
+
+/*PAGINATION*/
+.step-links a{
+    text-decoration: none;
+    margin-right: 1%;
+    color: #008080;
+    background-color: #D3D3D3;
+    padding: 0.5%;
+    text-align: center;
+}
+.step-links a:hover{
+    background-color: #A9A9A9;
+}
+.paginator{
+    text-align: center;
 }

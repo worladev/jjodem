@@ -4,56 +4,81 @@
 {% block content %}
     {% include 'navbar.html' %}
 
-    <div class="row home-main-div search-div" style="background-color: #F7F7F7;">
-        {% if safe_query %}
-            <div class="about-view-div">
-                <h4>Available "{{safe_query}}" cars</h4>
-
-                {% with results.count as total_results %}
-                    <p>Found {{total_results}} car{{total_results|pluralize}} matching "{{safe_query}}"</p>
-                {% endwith %} 
-                <form action="{% url 'search' %}" method="GET" class="inner-search-form">
-                    {% csrf_token %}
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control form-control-sm form-style"
-                                name="search-data" placeholder="Enter brand or model name here">
-                        <button type="submit" class="btn-dark">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </div>
-                </form>
-                <hr>
-
-                {% for car in results %}
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="{% url 'car-detail' car.id %}">
-                            <div class="card home-card" style="width: 18rem;">
-                                <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title">{{car.brand_name}} | {{car.model_name}}</h6>
-                                    <button class="btn btn-primary">Details</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+    <div class="search-view-div">
+        {% if safe_query != None %}
+            <div class="row">
+                <div class="col">
+                    <h4>Available "{{safe_query}}" cars</h4>
+                    <p>Found {{ paginator.count }} car{{ paginator.count|pluralize }} matching "{{ safe_query }}"</p>
+                    <hr>
+                </div>
             </div>
-        {% else %}
-            <div class="about-view-div">
-                <h6>No search item entered. <br> Enter a car brand or model.</h6>
-                <form action="{% url 'search' %}" method="GET" class="inner-search-form">
-                    {% csrf_token %}
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control form-control-sm form-style"
-                                name="search-data" placeholder="Enter brand or model name here">
-                        <button type="submit" class="btn-dark">
-                            <i class="bi bi-search"></i>
-                        </button>
+
+            <div class="row">
+                {% if search_results %}
+                    {% for car in search_results %}
+                        <div class="col">
+                            <a href="{% url 'car-detail' car.id %}">
+                                <div class="card home-card" style="width: 18rem;">
+                                    <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h6 class="card-title">{{car.brand_name}} | {{car.model_name}}</h6>
+                                        <button class="btn btn-primary">Details</button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <hr>
+            <!--PAGINATION-->
+            {% if paginator %}
+                {% if search_results.has_other_pages %}
+                    <div class="paginator">
+                        <span class="step-links">
+                            {% if search_results.has_previous %}
+                                <a href="?page=1{% if safe_query %}&data={{ safe_query }}{% endif %}">First</a>
+                                <a href="?page={{ search_results.previous_page_number }}{% if safe_query %}&data={{ safe_query }}{% endif %}">
+                                    Previous
+                                </a>
+                            {% endif %}
+
+                            <span class="current">
+                                Page {{ search_results.number }} of {{ search_results.paginator.num_pages }}
+                            </span>
+
+                            {% if search_results.has_next %}
+                                <a href="?page={{ search_results.next_page_number }}{% if safe_query %}&data={{ safe_query }}{% endif %}">
+                                    Next
+                                </a>
+                                <a href="?page={{ search_results.paginator.num_pages }}{% if safe_query %}&data={{ safe_query }}{% endif %}">
+                                    Last
+                                </a>
+                            {% endif %}
+                        </span>
                     </div>
-                </form>
+                {% endif %}
+            {% endif %}
+        {% else %} <!--ELSE FOR if safe query equal to none-->
+            <div class="row search-div">
+                <div class="col">
+                    <h6>No query entered. <br> Type a car brand or model.</h6>
+                    <form action="{% url 'search' %}" method="GET" class="inner-search-form">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control form-control-sm form-style"
+                                    name="data" placeholder="Enter brand or model name here">
+                            <button type="submit" class="btn-dark">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         {% endif %}
     </div>
-    
+
     {% include 'footer.html' %}
 {% endblock content %}
