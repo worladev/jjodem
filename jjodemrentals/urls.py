@@ -23,7 +23,9 @@ from rentals import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('rentals.urls')),
+    path('booking/', include('booking.urls', namespace='booking')),
+    path('payment/', include('payment.urls', namespace='payment')),
+    path('', include('rentals.urls', namespace='rentals')),
     
     path('404/', views.not_found_view),
     

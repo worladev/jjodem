@@ -32,7 +32,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'rentals.apps.RentalsConfig',
+    'booking.apps.BookingConfig',
+    'payment.apps.PaymentConfig',
 
     'crispy_forms',
     'crispy_bootstrap5',
