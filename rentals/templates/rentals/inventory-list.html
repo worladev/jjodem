@@ -3,21 +3,22 @@
 {% block title %}Inventory List{% endblock %}
 {% block content %}
     {% include 'navbar.html' %}
-    
-    <div class="row" style="background-color: #F7F7F7;">
-    {% for car in car_models %}
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <a href="{% url 'car-detail' car.id %}">
-                <div class="card home-card" style="width: 18rem;">
-                    <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">{{car.brand_name}} | {{car.model_name}}</h6>
-                        <button class="btn btn-primary"> Details</button>
-                    </div>
+
+    <div class="row inventory-bg">
+        <hr><h5 class="h5-style">All Available Vehicles.</h5><hr>
+        {% for car in car_models %}
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card home-card">
+                    <a href="{% url 'rentals:car-detail' car.id %}">
+                        <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">{{car.brand_name}} | {{car.model_name}}</h6>
+                            <button class="btn btn-primary"> Details</button>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-    {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 
     {% include 'footer.html' %}

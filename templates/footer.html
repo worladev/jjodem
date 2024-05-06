@@ -20,12 +20,12 @@
             <div>
                 <h5 class="footer-section-h5">Quick Links</h5>
                 <ul class="footer-ul">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'inventory-list' %}">Inventory</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'about' %}">Contact</a></li>
-                    <li><a href="{% url 'terms-and-condition' %}">Terms and Conditions</a></li>
-                    <li><a href="{% url 'terms-and-condition' %}">Privacy Policy</a></li>
+                    <li><a href="{% url 'rentals:home' %}">Home</a></li>
+                    <li><a href="{% url 'rentals:inventory-list' %}">Inventory</a></li>
+                    <li><a href="{% url 'rentals:about' %}">About</a></li>
+                    <li><a href="{% url 'rentals:about' %}">Contact</a></li>
+                    <li><a href="{% url 'rentals:terms-and-condition' %}">Terms and Conditions</a></li>
+                    <li><a href="{% url 'rentals:terms-and-condition' %}">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -34,7 +34,7 @@
              <!--Footer Middle Section-->
             <div class="col-sm-6 col-md-4 col-lg-4">
                 <div class="footer-sec3-div">
-                    <a href="{% url 'home' %}"><img src="{{ shop_info.logo.url }}" alt="jjodem-logo"></a>
+                    <a href="{% url 'rentals:home' %}"><img src="{{ shop_info.logo.url }}" alt="jjodem-logo"></a>
                     <p>{{shop_info.slogan}}</p>
                 </div>
             </div>

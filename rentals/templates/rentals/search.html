@@ -17,16 +17,16 @@
             <div class="row">
                 {% if search_results %}
                     {% for car in search_results %}
-                        <div class="col">
-                            <a href="{% url 'car-detail' car.id %}">
-                                <div class="card home-card" style="width: 18rem;">
+                        <div class="col-sm-6 col-md-3 col-lg-3">
+                            <div class="card home-card"">
+                                <a href="{% url 'rentals:car-detail' car.id %}">
                                     <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h6 class="card-title">{{car.brand_name}} | {{car.model_name}}</h6>
                                         <button class="btn btn-primary">Details</button>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     {% endfor %}
                 {% endif %}
@@ -65,7 +65,7 @@
             <div class="row search-div">
                 <div class="col">
                     <h6>No query entered. <br> Type a car brand or model.</h6>
-                    <form action="{% url 'search' %}" method="GET" class="inner-search-form">
+                    <form action="{% url 'rentals:search' %}" method="GET" class="inner-search-form">
                         {% csrf_token %}
                         <div class="input-group mb-3">
                             <input type="text" class="form-control form-control-sm form-style"

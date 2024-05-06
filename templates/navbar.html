@@ -24,7 +24,7 @@
     <div class="row">
         <nav class="navbar navbar-expand-lg nav-item">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">JJODEM</a>
+                <a class="navbar-brand" href="{% url 'rentals:home' %}">JJODEM</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,16 +32,16 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-link">
                         <li>
-                            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'rentals:home' %}">Home</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{% url 'inventory-list' %}">Inventory</a>
+                            <a class="nav-link" href="{% url 'rentals:inventory-list' %}">Inventory</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{% url 'about' %}">About</a>
+                            <a class="nav-link" href="{% url 'rentals:about' %}">About</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{% url 'about' %}">Contact</a>
+                            <a class="nav-link" href="{% url 'rentals:about' %}">Contact</a>
                         </li>
                         <li>
                             <a class="nav-link" href="#"></a>
@@ -72,7 +72,7 @@
                     </div>
 
                     <!--Search Bar on Navebar-->
-                    <form action="{% url 'search' %}" method="GET">
+                    <form action="{% url 'rentals:search' %}" method="GET">
                         {% csrf_token %}
                         <div class="input-group mb-3">
                             <input type="text" class="form-control form-control-sm form-style"

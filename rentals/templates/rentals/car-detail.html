@@ -4,22 +4,20 @@
 {% block content %}
     {% include 'navbar.html' %}
     
-    <div class="row" style="background-color: #FFF0F5;">
+    <div class="row detail-bg"">
         <div class="col-12">
             <div class="detail-card">
                 <img src="{{car.model_image.url}}" style="width: 50%; height: 65%;" alt="...">
-                <h5 class="">{{car.brand_name}} | {{car.model_name}}</h5>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-6 detail-text">
+                        <h5 class="">{{car.brand_name}} | {{car.model_name}}</h5>
                         <p><b>{{car.number_of_doors}} Doors</b></p>
-                        <p><b>{{car.number_of_passengers}} People</b></p>
-                        <p><b>{{car.fuel}}</b></p>      
-                    </div>
-                    <div class="col-6">
+                        <p><b>{{car.number_of_passengers}} Passengers</b></p>
+                        <p><b>{{car.fuel}}</b></p>
                         <p><b>{{car.transmission}}</b></p>
                         <p><b>{{car.drive_type}}</b></p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div> 
+                        <a href="{% url 'booking:book-car' car.id %}" class="btn btn-primary">Book This Vehicle</a>    
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,10 +25,10 @@
 
     <div class="row"><hr><!--RECOMMENDATION SPOT-->
         {% if similar_cars %}  
-            <h4>Check Out Similar Type of Cars</h4>
+            <hr><h5 class="h5-style">Check Out Similar Type of Cars</h5><hr>
             {% for car in similar_cars %}
                 <div class="col-sm-3 col-md-3 col-lg-2">
-                    <a href="{% url 'car-detail' car.id %}">
+                    <a href="{% url 'rentals:car-detail' car.id %}">
                         <div class="card recommendation-card">
                             <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -46,8 +44,9 @@
     </div>
 
     <div class="row"><!--REVIEW SPOT-->
-        <div class="col-sm-6 col-md-3 col-lg-2">
-            REVIEW SPOT
+        <hr><h5 class="h5-style">What Our Customers Are Saying...</h5><hr>
+        <div class="col">
+
         </div>
     </div>
 

@@ -11,11 +11,11 @@ div .container-fluid{
 .btn{
     background-color: #2C3539 !important;
     color: #0AFFFF !important;
-    border-radius: 18px !important;
+    border-radius: 11px !important;
 }
 .btn:hover{
-    background-color: #0AFFFF !important;
-    color: #2C3539 !important;
+    background-color: #040720 !important;
+    color: #F7F7F7 !important;
 }
 .home-img{
     background-image: url('/static/rentals/images/home-bg-img.jpg');
@@ -50,13 +50,13 @@ div .container-fluid{
     height: 40%;
 }
 .home-intro-landing-btn{
-    background-color: #0AFFFF !important;
-    color: #2C3539 !important;
-    border-radius: 18px !important;
-}
-.home-intro-landing-btn:hover{
     background-color: #2C3539 !important;
     color: #0AFFFF !important;
+    border-radius: 11px !important;
+}
+.home-intro-landing-btn:hover{
+    background-color: #040720 !important;
+    color: #F7F7F7 !important;
 }
 
 /*HOME ANIMATION*/
@@ -73,7 +73,7 @@ div .container-fluid{
     animation-timing-function: ease-in;
 }
 @keyframes intro-truck{
-    0% {color: #000000; left: 0px;}
+    0% {color: #0000A0; left: 0px;}
     50% {color: maroon; left: 100px;}
     100% {color: #008080; left: 200px;}
 }
@@ -85,6 +85,10 @@ div .container-fluid{
 /*HOME PAGE CAR TYPE SECTION*/
 .home-main-div{
     padding-top: 2%;
+}
+.h5-style{
+    color: #0000A0;
+    border-left: 3px solid #0000A0;
 }
 .home-main-div a{
     text-decoration: none;
@@ -100,12 +104,29 @@ div .container-fluid{
     height: 175px;
 }
 
+/*INVENTORY*/
+.inventory-bg{
+    background-color: #F7F7F7;
+}
+
+
 /*DETAIL TEMPLATE*/
+.detail-bg{
+    background-color: #008080;
+}
 .detail-card{
-    margin: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     padding: 2%;
     background-color: #EAEEE9;
     text-align: center;
+    border: 1px solid black;
+    border-radius: 11px;
+}
+.detail-text{
+    text-align: center;
+    margin: auto;
+    padding: 1%;
 }
 
 /*RECOMMENDATION*/
@@ -204,7 +225,7 @@ div .container-fluid{
     text-decoration: underline;
 }
 
-/*PAGINATION*/
+/*PAGINATION STYLE*/
 .step-links a{
     text-decoration: none;
     margin-right: 1%;
@@ -218,4 +239,19 @@ div .container-fluid{
 }
 .paginator{
     text-align: center;
+}
+
+/*BOOKING VIEW STYLE*/
+.book-h5{
+    margin-left: 5%;
+}
+.book-div{
+    width: 41%;
+    margin: auto;
+    /* margin-bottom: 1%; */
+    padding: 2%;
+    background-color: #EAEEE9;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 11px;
 }
