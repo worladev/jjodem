@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Create an account{% endblock %}
+{% block content %}
+    {% include 'navbar.html' %}
+
+    <h5>Sign up</h5>
+    <p>Enter required details to create an account.</p>
+    <form method="post">
+        {{ user_form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Create Account</button>
+    </form>
+
+    {% include 'footer.html' %}
+{% endblock %}

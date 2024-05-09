@@ -48,28 +48,16 @@
                         </li>
                     </ul>
 
-                    <!--Social Handles 1: Don't Display on Mobile-->
-                    <div class="mobile-no-display social">
-                        {% if social_handles %}
-                            <ul>
-                                {% for platform, handle_url in social_handles.items %}
-                                    <li>
-                                        <a href="{{ handle_url }}" target="_blank">
-                                            {% if platform == 'Facebook' %}
-                                                <i class="bi bi-facebook"></i>
-                                            {% elif platform == 'WhatsApp' %}
-                                                <i class="bi bi-whatsapp"></i>
-                                            {% elif platform == 'Twitter' %}
-                                                <i class="bi bi-twitter-x"></i>
-                                            {% else %}
-                                                <i class="bi bi-question-circle"></i>
-                                            {% endif %}
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
+                    <!--USER-->
+                    <span class="user">
+                        {% if request.user.is_authenticated %}
+                            Hello {{ request.user.first_name }}
+                            <a href="{% url 'account:logout' %}">Logout</a>
+                        {% else %}
+                            <a href="{% url 'account:login' %}">Log-in<i class="bi bi-person-circle"></i></a>
                         {% endif %}
-                    </div>
+                    </span>
+                    
 
                     <!--Search Bar on Navebar-->
                     <form action="{% url 'rentals:search' %}" method="GET">
@@ -84,7 +72,7 @@
                     </form>
 
                     <!--Social Handles 2: Don't Display on Desktop-->
-                    <div class="col-2 desktop-no-display social">
+                    <div class="col-2 desktop-no-display social-mobile">
                         {% if social_handles %}
                             <ul>
                                 {% for platform, handle_url in social_handles.items %}
@@ -96,6 +84,10 @@
                                                 <i class="bi bi-whatsapp"></i>
                                             {% elif platform == 'Twitter' %}
                                                 <i class="bi bi-twitter-x"></i>
+                                            {% elif platform == 'LinkedIn' %}
+                                                <i class="bi bi-linkedin"></i>
+                                            {% elif platform == 'Instagram' %}
+                                                <i class="bi bi-instagram"></i>
                                             {% else %}
                                                 <i class="bi bi-question-circle"></i>
                                             {% endif %}
@@ -105,7 +97,6 @@
                             </ul>
                         {% endif %}
                     </div>
-
                 </div>
             </div>
         </nav>
@@ -114,23 +105,55 @@
     <!--CONTACT INFO NAVBAR-->
     <div class="row shop-info mobile-display sticky-top">
         {% if shop_info %}
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <i class="bi bi-pin-map-fill"></i>
                 {{ shop_info.address }}
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-2">
                 <a href="tel:+233547813006">
                     <i class="bi bi-telephone-fill"></i>
                     {{ shop_info.mobile }}
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <a href="mailto:jjodemlogistics@gmail.com">
                     <i class="bi bi-envelope-at-fill"></i>
                     {{ shop_info.email }}
                 </a>
             </div>
         {% endif %}
+
+        <!--Social Handles 1: Don't Display on Mobile-->
+        <div class="col-lg-4">
+        <div class="mobile-no-display social-desktop">
+            {% if social_handles %}
+                <ul>
+                    {% for platform, handle_url in social_handles.items %}
+                        <li>
+                            <a href="{{ handle_url }}" target="_blank">
+                                {% if platform == 'Facebook' %}
+                                    <i class="bi bi-facebook"></i>
+                                {% elif platform == 'WhatsApp' %}
+                                    <i class="bi bi-whatsapp"></i>
+                                {% elif platform == 'Twitter' %}
+                                    <i class="bi bi-twitter-x"></i>
+                                {% elif platform == 'LinkedIn' %}
+                                    <i class="bi bi-linkedin"></i>
+                                {% elif platform == 'Instagram' %}
+                                    <i class="bi bi-instagram"></i>
+                                {% else %}
+                                    <i class="bi bi-question-circle"></i>
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+        
+
     </div><!--END OF CONTACT INFO NAVBAR-->
 </body>
 </html>

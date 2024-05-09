@@ -23,6 +23,7 @@ from rentals import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('account/', include('account.urls', namespace='account')),
     path('booking/', include('booking.urls', namespace='booking')),
     path('payment/', include('payment.urls', namespace='payment')),
     path('', include('rentals.urls', namespace='rentals')),

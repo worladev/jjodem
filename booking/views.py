@@ -14,7 +14,15 @@ def book_car(request, car_id):
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.car_book = car_to_book
+            
+            # populate user details required fields
+            if request.user.is_authenticated:
+                booking.user = request.user
+                booking.car_book = car_to_book
+                booking.email = request.user.email
+                booking.first_name = request.user.first_name
+                booking.last_name = request.user.last_name
+                
             booking_created.delay(car_id) # add asynchronous task
             request.session['car_id'] = car_id
             booking.paid = False

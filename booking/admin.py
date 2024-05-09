@@ -6,8 +6,7 @@ from .models import Booking
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     list_display = [
-        'car_book', 'customer_firstname', 'customer_lastname',
-        'customer_email', 'start_date', 'end_date', 'booking_date',
+        'user', 'car_book', 'start_date', 'end_date', 'booking_date',
         'paid'
     ]
     list_filter = ['booking_date', 'car_book', 'paid']

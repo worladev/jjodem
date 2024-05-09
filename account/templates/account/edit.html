@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit profile{% endblock %}
+{% block content %}
+    {% include 'navbar.html' %}
+    <h5>Edit your account</h5>
+    <p>You can edit the following details on your profile.</p>
+    <form method="post" enctype="multipart/form-data">
+        {{ user_form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Save Changes</button>
+    </form>
+    {% include 'footer.html' %}
+{% endblock %}

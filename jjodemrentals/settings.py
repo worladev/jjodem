@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'jjodemrentals.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rentals',
+        'NAME': 'rentals_db',
         'USER': 'jjodem',
         'PASSWORD': 'jjodem@DB',
     }
@@ -140,13 +140,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+# Static files configuration
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'rentals/static',]
 STATIC_ROOT = BASE_DIR / 'assets'
 
-
+# Media files configuration
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Custom user configuration
+AUTH_USER_MODEL = 'account.CustomUser'
+
+# Authentication configuration
+LOGIN_REDIRECT_URL = 'rentals:home'
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'rentals:home'
+LOGOUT_URL = 'login'
+
+# Email server configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'worlasi14@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 586
+EMAIL_USE_TSL = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
