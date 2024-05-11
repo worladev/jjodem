@@ -1,9 +1,6 @@
 .footer{
     background-color: #2C3539;
     padding-top: 5%;
-    margin: 5%;
-    padding-bottom: 3%;
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -32,6 +29,13 @@
     text-decoration: underline;
     color: #3B9C9C;
 }
+.footer-sec3-div{
+    color: #EAEEE9;
+}
+.footer-sec3-div p{
+    margin-left: 15%;
+    padding-left: 7%;
+}
 .footer-sec3-div img{
     width: 35%;
     height: 40%;
@@ -52,4 +56,16 @@
 .footer-social-ul li a{
     font-size: 1.3em;
     color: #FFFFFF;
+}
+
+.copyright{
+    color: #EAEEE9;
+    text-align: center;
+    margin-top: 3% !important;
+}
+.copyright p{
+    border-top: 1px dashed #EAEEE9;
+    padding: 1%;
+    width: 75%;
+    margin: auto;
 }

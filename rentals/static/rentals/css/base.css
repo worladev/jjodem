@@ -6,12 +6,15 @@ div .container-fluid{
     margin: 0px !important;
     padding: 0px !important;
 }
+*{
+    box-sizing: border-box;
+}
 
 /*HOME PAGE TOP SECTION*/
 .btn{
     background-color: #2C3539 !important;
     color: #0AFFFF !important;
-    border-radius: 11px !important;
+    border-radius: 5px !important;
 }
 .btn:hover{
     background-color: #040720 !important;
@@ -85,6 +88,7 @@ div .container-fluid{
 /*HOME PAGE CAR TYPE SECTION*/
 .home-main-div{
     padding-top: 2%;
+    background-color: #F7F7F7;
 }
 .h5-style{
     color: #0000A0;
@@ -254,4 +258,76 @@ div .container-fluid{
     text-align: center;
     border: 1px solid black;
     border-radius: 11px;
+}
+
+/*DASHBOARD ACCOUNT and FORMS*/
+label{
+    display: inline-block;
+}
+.form-div{
+    display: flex;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+.form-wrapper{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.input-row{
+    padding-left: 20%;
+    margin: auto;
+}
+.input-row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.form-div img{
+    width: 20%;
+    height: 25%;
+}
+.form-btn{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.form-logo-div{
+    text-align: center;
+}
+.forgot-signup-div{
+    text-align: center;
+}
+.forgot-signup-div a:hover{
+    color: #008080;
+    text-decoration: none;
+}
+
+
+/*dashboard*/
+.dashboard-wrapper{
+    min-height: 80vh;
+}
+.dashboard-menu-section{
+    border: 2px solid #008080;
+    background-color: #2C3539;
+}
+.dashboard-menu-section ul{
+    list-style-type: none;
+    margin-top: 8%;
+}
+.dashboard-menu-section ul li{
+    text-decoration: none;
+    padding: 1%;
+    margin-bottom: 3%;
+}
+.dashboard-menu-section ul li a{
+    text-decoration: none;
+    color:#EAEEE9;
+}
+.dashboard-menu-section ul li a:hover{
+    text-decoration: none;
+    color: #A9A9A9;
 }

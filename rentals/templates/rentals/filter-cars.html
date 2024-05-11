@@ -4,11 +4,11 @@
 {% block content %}
     {% include 'navbar.html' %}
 
-    <div class="row home-main-div" style="background-color: #F7F7F7;">
+    <div class="row home-main-div">
         {% for car in filter_car %}
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <a href="{% url 'rentals:car-detail' car.id %}">
-                <div class="card home-card" style="width: 18rem;">
+                <div class="card home-card">
                     <img src="{{car.model_image.url}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">{{car.brand_name}} | {{car.model_name}}</h6>
