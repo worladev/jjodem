@@ -51,10 +51,26 @@
                     <!--USER-->
                     <span class="user">
                         {% if request.user.is_authenticated %}
-                            Hello {{ request.user.first_name }}
-                            <a href="{% url 'account:logout' %}">Logout</a>
+                            <ul>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="{% url 'account:dashboard' %}"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Hello {{ request.user.first_name }}
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'account:dashboard' %}">Dashboard</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'account:logout' %}">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         {% else %}
-                            <a href="{% url 'account:login' %}">Log-in<i class="bi bi-person-circle"></i></a>
+                            <ul>
+                                <li class="nav-item">
+                                    <a href="{% url 'account:login' %}">Log-in
+                                        <i class="bi bi-person-circle"></i>
+                                    </a>
+                                </li>
+                            </ul>                       
                         {% endif %}
                     </span>
                     
