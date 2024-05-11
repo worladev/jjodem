@@ -154,9 +154,9 @@ AUTH_USER_MODEL = 'account.CustomUser'
 
 # Authentication configuration
 LOGIN_REDIRECT_URL = 'rentals:home'
-LOGIN_URL = 'login'
+LOGIN_URL = 'account:login'
 LOGOUT_REDIRECT_URL = 'rentals:home'
-LOGOUT_URL = 'login'
+LOGOUT_URL = 'account:login'
 
 # Email server configuration
 EMAIL_HOST = 'smtp.gmail.com'
