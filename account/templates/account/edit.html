@@ -3,12 +3,60 @@
 {% block title %}Edit profile{% endblock %}
 {% block content %}
     {% include 'navbar.html' %}
-    <h5>Edit your account</h5>
-    <p>You can edit the following details on your profile.</p>
-    <form method="post" enctype="multipart/form-data">
-        {{ user_form.as_p }}
-        {% csrf_token %}
-        <button type="submit">Save Changes</button>
-    </form>
+    <div class="row">
+        <div class="col form-div">
+            <div class="form-wrapper">
+                <div class="form-logo-div">
+                    <img src="{{ shop_info.logo.url }}" alt="JJODEM">
+                    <h5>Edit your account</h5>
+                </div>
+
+                <p>You can edit the following details on your profile.</p>
+                <div class="input-row">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">Email Address</label>
+                            <div>
+                                {{ user_form.email }}
+                            </div>  
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_first_name" class="form-label">First Name</label>
+                            <div>
+                                {{ user_form.first_name }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_last_name" class="form-label">Last Name</label>
+                            <div>
+                                {{ user_form.last_name }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_address" class="form-label">Address</label>
+                            <div>
+                                {{ user_form.address }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_phone_nnumber" class="form-label">Phone Number</label>
+                            <div>
+                                {{ user_form.phone_number }}
+                            </div>
+                        </div>
+                        <!-- {{ user_form.as_p }} -->
+                        {% csrf_token %}
+                        <div class="form-btn">
+                            <button type="submit" class="btn btn-primary login-btn">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     {% include 'footer.html' %}
 {% endblock %}

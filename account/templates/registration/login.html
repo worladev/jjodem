@@ -4,28 +4,53 @@
 {% block content %}
     {% include 'navbar.html' %}
     
-    {% if form.errors %}
-        <p>Incorrect email or password.</p>
-    {% else %}
-        <h5>Login</h5>
-        <p>You don't have an account? <a href="{% url 'account:register' %}">Register</a></p>
-    {% endif %}
+    
     <div class="row">
-        <div class="col">
-            <div class="login-form">
+        <div class="col form-div">
+            <div class="form-wrapper">
+                
                 <form method="post">
+                    <div class="form-logo-div">
+                        {% if form.errors %}
+                            <p>Incorrect email or password.</p>
+                        {% else %}
+                            <h4><img src="{{ shop_info.logo.url }}" alt="JJODEM">Login</h4>
+                        {% endif %}
+                    </div>
+
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    <div class="input-row">
+                        <div class="mb-3">
+                            <label for="id_username" class="form-label">Email Address</label>
+                            <div>
+                                {{ form.username }}
+                            </div>  
+                        </div>
+                       
+                        <div class="mb-3">
+                            <label for="id_password" class="form-label">Password</label>
+                            <div class="col-auto">
+                                {{ form.password }}
+                            </div>
+                        </div>
+                    </div>
+                    
                     <input type="hidden" name="next" value="{{ next }}">
-                    <button type="submit">Login</button>
+                    <div class="form-btn">
+                        <button type="submit" class="btn btn-primary login-btn">Login</button>
+                    </div>
                 </form>
-                <p>
-                    <a href="{% url 'account:password_reset' %}">
-                        Forgotten your password?
-                    </a>
-                </p>
-            </div>
-        </div>
+                <div class="forgot-signup-div">
+                    <p>
+                        <a href="{% url 'account:password_reset' %}">Forgot password</a>
+                    </p>
+                    <p>
+                        Don't have an account?<a href="{% url 'account:register' %}"> Sign-Up</a>
+                    </p>
+                </div>
+            </div><!--End Of form-wrapper-->
+
+        </div><!--End Of form-div-->
     </div>
    
     {% include 'footer.html' %}

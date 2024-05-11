@@ -4,10 +4,23 @@
 {% block content %}
     {% include 'navbar.html' %}
 
-    <h5>Welcome {{ new_user.first_name }}</h5>
-    <p>
-        Your account has been created successfully.
-        You can now <a href="{% url 'account:login' %}">Login</a>.
-    </p>
+    <div class="row">
+        <div class="col form-div">
+            <div class="form-wrapper">
+                <div class="form-logo-div">
+                    <img src="{{ shop_info.logo.url }}" alt="JJODEM">
+                </div>
+
+                <div class="input-row">
+                    <h5>Welcome {{ new_user.first_name }}</h5>
+                    <p>
+                        Your account has been created successfully.
+                        You can now <a href="{% url 'account:login' %}">Login</a>.
+                    </p>
+                </div>    
+            </div>
+        </div>
+    </div>
+    
     {% include 'footer.html' %}
 {% endblock %}

@@ -4,11 +4,28 @@
 {% block content %}
     {% include 'navbar.html' %}
 
-        <h5>Welcome to your dashboard</h5>
-        <p>
-            You can <a href="{% url 'account:edit' %}">edit your profile</a>
-            <a href="{% url 'account:password_change' %}">change your password</a>.
-        </p>
+    <div class="row dashboard-wrapper">
+            <div class="col-3">
+                <div class="dashboard-menu-section">
+                    
+                    <ul>
+                        <li><h5><a href="">Welcome {{ request.user.first_name }}</a></h5></li>
+                        <li><a href="">Transactions</a></li>
+                        <li><a href="{% url 'account:edit' %}">Edit Profile</a></li>
+                        <li><a href="{% url 'account:password_change' %}">Change Password</a></li>
+                        <li><a href="{% url 'account:password_reset' %}">Reset Password</a></li>
+                        <div class="dropdown-divider"></div>
+                        <li><a href="{% url 'account:logout' %}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="dashboard-content-section">
+                    
+                </div>
+            </div>
+    </div>
+        
 
     {% include 'footer.html' %}
 {% endblock %}

@@ -1,19 +1,23 @@
 from django import forms
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from account.models import CustomUser
 
 
 
 # Create your forms here
 class LoginForm(forms.Form):
-    email = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.CharField(
+        widget=forms.TextInput(attrs={'class':'form-control'})
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class':'form-control'})
+    )
     
 
 # User Registration
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
     
     class Meta:
         model = CustomUser
@@ -27,7 +31,7 @@ class UserRegistrationForm(forms.ModelForm):
     
     def clean_email(self):
         data = self.cleaned_data['email']
-        if User.objects.filter(email=data).exists():
+        if CustomUser.objects.filter(email=data).exists():
             raise forms.ValidationError('Email already in use.')
         return data
 
@@ -40,7 +44,7 @@ class UserEditForm(forms.ModelForm):
         
     def clean_email(self):
         data = self.cleaned_data['email']
-        query = User.objects.exclude(id=self.instance.id).filter(email=data)
+        query = CustomUser.objects.exclude(id=self.instance.id).filter(email=data)
         if query.exists():
             raise forms.ValidationError('Email already in use.')
         return data

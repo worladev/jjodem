@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from account.forms import LoginForm, UserRegistrationForm, UserEditForm
@@ -56,6 +56,7 @@ def edit(request):
         user_form = UserEditForm(instance=request.user, data=request.POST)
         if user_form.is_valid():
             user_form.save()
+            return redirect('account:dashboard')
     else:
         user_form = UserEditForm(instance=request.user)
     return render(request, 'account/edit.html', {'user_form': user_form})

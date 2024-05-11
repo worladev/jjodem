@@ -4,13 +4,81 @@
 {% block content %}
     {% include 'navbar.html' %}
 
-    <h5>Sign up</h5>
-    <p>Enter required details to create an account.</p>
-    <form method="post">
-        {{ user_form.as_p }}
-        {% csrf_token %}
-        <button type="submit">Create Account</button>
-    </form>
+
+    <div class="row">
+        <div class="col form-div">
+            <div class="form-wrapper">
+
+                <form method="post">
+                    <div class="form-logo-div">
+                        <h4><img src="{{ shop_info.logo.url }}" alt="JJODEM">Sign Up</h4>
+                        <p>Enter required details to create an account.</p>
+                    </div>
+
+                    {% csrf_token %}
+                    <div class="input-row">
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">Email Address</label>
+                            <div>
+                                {{ user_form.email }}
+                            </div>  
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_first_name" class="form-label">First Name</label>
+                            <div>
+                                {{ user_form.first_name }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_last_name" class="form-label">Last Name</label>
+                            <div>
+                                {{ user_form.last_name }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_address" class="form-label">Address</label>
+                            <div>
+                                {{ user_form.address }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_phone_nnumber" class="form-label">Phone Number</label>
+                            <div>
+                                {{ user_form.phone_number }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_password" class="form-label">Password</label>
+                            <div>
+                                {{ user_form.password }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_password_confirm" class="form-label">Confirm Password</label>
+                            <div class="col-70">
+                                {{ user_form.password2 }}
+                            </div>
+                        </div>
+                    </div><!--End Of input-row-->
+                    <div class="form-btn">
+                        <button type="submit" class="btn btn-primary login-btn">Sign Up</button>
+                    </div>
+                </form>
+
+                <div class="forgot-signup-div">
+                    <p>
+                        Have an account?<a href="{% url 'account:login' %}"> Log-In</a>
+                    </p>
+                </div>
+            </div><!--End Of form-wrapper-->
+        </div><!--End Of form-div-->
+    </div>
 
     {% include 'footer.html' %}
 {% endblock %}
