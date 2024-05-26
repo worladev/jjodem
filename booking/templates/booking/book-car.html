@@ -3,11 +3,17 @@
 {% block title %}booking{% endblock %}
 {% block content %}
     {% include 'navbar.html' %}
-        <hr><h5 class="book-h5">Book Car</h5><hr>
+        
         <div class="row">
-            <div class="col detail-bg">
+            <div class="col form-div">
                 <div class="book-div">
-                    <p>You are booking {{ car_to_book }}</p>
+                    <div class="form-logo-div">
+                        <img src="{{ shop_info.logo.url }}" alt="JJODEM">
+                        <hr>
+                        <p>You are booking {{ car_to_book }}</p>
+                        <p>Enter required details to book your ride.</p>
+                    </div>
+                    
                     <form method='post' enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.as_p }}

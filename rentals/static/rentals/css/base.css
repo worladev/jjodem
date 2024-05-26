@@ -250,7 +250,8 @@ div .container-fluid{
     margin-left: 5%;
 }
 .book-div{
-    width: 41%;
+    /* width: 41%; */
+    width: auto;
     margin: auto;
     /* margin-bottom: 1%; */
     padding: 2%;
